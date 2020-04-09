@@ -1,0 +1,24 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+	{% for book in library %}
+	    {{book.genre_name}}
+	    {{book.author.name}}
+	    {{book.book_title}}
+	    {{book.publisher_name}}
+	    {{book.release_date}}
+	    {{book.length}}
+	    {{book.reader_name}}
+	    {{book.reader_comment}}
+	    {{book.reader_rating}}
+	    {{book.reader_review_date}}
+	    {{book.isbn_10}}
+	{% endfor %}
+
+</body>
+
+</html>
