@@ -4,16 +4,40 @@
 
 <head>
 
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
 </head>
 
 
 <body>
+	<div class="navbar-fixed">
+		<ul id="dropdown1" class="dropdown-content">
+			<li><a href="#!">Add book</a></li>
+			<li><a href="#!">Edit book</a></li>
+			<li class="divider"></li>
+			<li><a href="#!">Delete book</a></li>
+		</ul>
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#!" class="brand-logo">The Book Review</a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="sass.html"><i class="material-icons">search</i></a></li>
+					<li><a href="badges.html"><i class="material-icons">local_library</i></a></li>
+					<li><a href="collapsible.html"><i class="material-icons">library_books</i></a></li>
+					<li><a class="dropdown-trigger" href="mobile.html" data-target="dropdown1"><i class="material-icons">library_add</i></a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
 
-<h1>This is a test</h1>
+	<h1>This is a test</h1>
 
-{% block content %}
-{% endblock %}
-
+	{% block content %}
+	{% endblock %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 
 

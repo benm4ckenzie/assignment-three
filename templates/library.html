@@ -1,18 +1,17 @@
 {% extends 'index.html' %}
 {% block content %}
 
-	{% for book in book %}
-	    {{book.genre_name}}
-	    {{book.author_name}}
-	    {{book.book_title}}
-	    {{book.publisher_name}}
-	    {{book.release_date}}
-	    {{book.length}}
-	    {{book.reader_name}}
-	    {{book.reader_comment}}
-	    {{book.reader_rating}}
-	    {{book.reader_review_date}}
-	    {{book.isbn_10}}
-	{% endfor %}
+	<div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">textsms</i>
+          <input type="text" id="autocomplete-input" class="autocomplete">
+          <label for="autocomplete-input">Autocomplete</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 {% endblock %}
