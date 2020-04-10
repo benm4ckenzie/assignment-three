@@ -1,10 +1,6 @@
-<html>
+{% extends index.html %}
+{% block content %}
 
-<head>
-
-</head>
-
-<body>
 	{% for book in book %}
 	    {{book.genre_name}}
 	    {{book.author_name}}
@@ -19,6 +15,4 @@
 	    {{book.isbn_10}}
 	{% endfor %}
 
-</body>
-
-</html>
+{% endblock %}
