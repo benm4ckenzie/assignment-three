@@ -61,5 +61,14 @@ Content
 The text for section Y was copied from the Wikipedia article Z
 Media
 The photos used in this site were obtained from ...
+library_image_1 - https://i.insider.com/579bb64add0895ce188b49df?width=1190
+library_image_2 - https://www.thisiscolossal.com/wp-content/uploads/2017/06/library-1.jpg
+library_image_3 - https://www.pixelstalk.net/free-download-library-wallpapers/
+library_image_4 - https://www.pixelstalk.net/free-download-library-wallpapers/
+library_image_5 - https://www.pixelstalk.net/free-download-library-wallpapers/
+library_illustration_1 - https://www.pixelstalk.net/free-download-library-wallpapers/
+
+
+
 Acknowledgements
 I received inspiration for this project from X
