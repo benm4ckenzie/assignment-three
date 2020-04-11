@@ -21,4 +21,4 @@ if __name__ == '__main__':
     debug=True)
 
 
-    $('.dropdown-trigger').dropdown();
+   
