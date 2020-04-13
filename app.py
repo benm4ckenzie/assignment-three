@@ -23,6 +23,11 @@ def home():
     return render_template('home.html')
 
 
+@app.route('/add_book')
+def add_book():
+    return render_template('addbook.html')
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
     port=int(os.environ.get('PORT')),

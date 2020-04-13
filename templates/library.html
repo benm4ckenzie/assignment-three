@@ -1,31 +1,60 @@
 {% extends 'index.html' %}
 {% block content %}
 
-	<div class="row">
-    <div class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">textsms</i>
-          <input type="text" id="autocomplete-input" class="autocomplete">
-          <label for="autocomplete-input">Autocomplete</label>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="row">
+	<div class="col s12">
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons prefix">textsms</i>
+				<input type="text" id="autocomplete-input" class="autocomplete">
+				<label for="autocomplete-input">Autocomplete</label>
+			</div>
+		</div>
+	</div>
+</div>
 
-  <ul class="collapsible">
-    <li>
-      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-  </ul>
+<ul class="collapsible">
+	{% for book in book %}
+	<li>
+		<div class="collapsible-header"><i class="material-icons">expand_more</i>
+			{{book.author_name}} - <strong>{{book.book_title}}</strong>
+		</div>
+		<div class="collapsible-body">
+			<span>
+            <strong>Genre:</strong> {{book.genre_name}}
+			</span>
+			<br>
+			<span>
+            <strong>Publisher:</strong> {{book.publisher_name}}
+            </span>
+			<br>
+			<span>
+            <strong>Release date:</strong> {{book.release_date}}
+            </span>
+			<br>
+			<span>
+            <strong>Book length:</strong> {{book.book_length}}
+            </span>
+            <br>
+            <span>
+            <strong>ISBN 13: </strong>{{book.isbn_13}}
+            </span>
+			<br>
+			<span>
+            <strong>Reviewer: </strong>{{book.reader_name}} - {{book.reader_review_date}}
+            </span>
+			<br>
+			<span>
+            <strong>Review: </strong>{{book.reader_comment}}
+            </span>
+			<br>
+			<span>
+            <strong>Rating: </strong>{{book.reader_rating}}
+            </span>
+            
+		</div>
+	</li>
+	{% endfor %}
+</ul>
 
 {% endblock %}

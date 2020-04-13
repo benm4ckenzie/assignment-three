@@ -1,0 +1,14 @@
+/*------------------------------------------------------------------------------BACKGROUND*/
+
+.background-image {
+    height: 100vh;
+    background: url('../images/library_image_7') no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
