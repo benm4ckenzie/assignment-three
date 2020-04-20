@@ -25,7 +25,15 @@ def home():
 
 @app.route('/add_book')
 def add_book():
-    return render_template('addbook.html')
+    return render_template('addbook.html',
+    rating=mongo.db.rating.find())
+
+
+@app.route('/submit_book', methods=['POST'])
+def submit_book():
+    book = mongo.db.book
+    book.insert_one(request.form.to_dict())
+    return redirect(url_for('get_library'))
 
 
 if __name__ == '__main__':

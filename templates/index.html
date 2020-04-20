@@ -33,10 +33,10 @@
 		</nav>
 	</div>
 
-	
-			{% block content %}
-			{% endblock %}
-		
+
+	{% block content %}
+	{% endblock %}
+
 
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -47,6 +47,13 @@
             $('.dropdown-trigger').dropdown();
             $('.slider').slider();
             $('select').formSelect();
+            $('.datepicker').datepicker({
+                autoClose: true,
+                format: 'd mmmm, yyyy'
+            });
+            document.getElementById("matfix").addEventListener("click", function(e) {
+	        e.stopPropagation();
+            });
             });
 	</script>
 </body>
