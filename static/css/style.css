@@ -1,8 +1,12 @@
 /*------------------------------------------------------------------------------BACKGROUND*/
 
-.background-image {
+/*body {
+    background-color: RED; 
+};*/
+
+.index-container {
     height: 100vh;
-    background: url('../images/library_image_7') no-repeat center top fixed;
+    background: url('../images/library_image_3.jpg') no-repeat center top fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -11,4 +15,16 @@
     align-items: center;
     justify-content: center;
     position: relative;
+}
+
+.btn_small {
+    height: 40px;
+    width: 120px;
+    line-height: 40px;
+    margin: 5px 5px;
+    padding: 0 0.5em;
+}
+
+.task_header {
+    margin-top: 5px;
 }

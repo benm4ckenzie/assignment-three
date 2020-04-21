@@ -16,42 +16,47 @@
 <ul class="collapsible">
 	{% for book in book %}
 	<li>
-		<div class="collapsible-header"><i class="material-icons">expand_more</i>
-			{{book.author_name}} - <strong>{{book.book_title}}</strong>
+		<div class="row collapsible-header" style="margin: 0px;">
+			<div class="col s9">
+				<i class="material-icons valign-wrapper">expand_more</i>
+				{{book.author_name}} - <strong>{{book.book_title}}</strong>
+			</div>
+			<div class="col s3 task_header">
+				<div class="switch right-align">
+					<label>
+                    <input disabled type="checkbox">
+                    <span class="lever"></span>
+                    Add to 'My Library'
+                    </label>
+				</div>
+			</div>
 		</div>
-		<div class="collapsible-body">
-			<span>
-            <strong>Genre:</strong> {{book.genre_name}}
-			</span>
-			<br>
-			<span>
-            <strong>Publisher:</strong> {{book.publisher_name}}
-            </span>
-			<br>
-			<span>
-            <strong>Release date:</strong> {{book.release_date}}
-            </span>
-			<br>
-			<span>
-            <strong>Book length:</strong> {{book.book_length}}
-            </span>
-            <br>
-            <span>
-            <strong>ISBN 13: </strong>{{book.isbn_13}}
-            </span>
-			<br>
-			<span>
-            <strong>Reviewer: </strong>{{book.reader_name}} - {{book.reader_review_date}}
-            </span>
-			<br>
-			<span>
-            <strong>Review: </strong>{{book.reader_comment}}
-            </span>
-			<br>
-			<span>
-            <strong>Rating: </strong>{{book.reader_rating}}
-            </span>
-            
+		<div class="row collapsible-body" style="margin: 0px;">
+			<div class="col s9">
+				<span>
+                <strong>Genre:</strong> {{book.genre_name}}
+			    </span>
+				<br>
+				<span>
+                <strong>Publisher:</strong> {{book.publisher_name}}
+                </span>
+				<br>
+				<span>
+                <strong>Release date:</strong> {{book.release_date}}
+                </span>
+				<br>
+				<span>
+                <strong>Book length:</strong> {{book.book_length}}
+                </span>
+				<br>
+				<span>
+                <strong>ISBN 13: </strong>{{book.isbn_13}}
+                </span>
+			</div>
+			<div class="col s3 right-align">
+                <a class="waves-effect waves-light btn btn_small teal darken-4">Update book</a>
+				<a class="waves-effect waves-light btn btn_small teal darken-4">Add review</a>
+			</div>
 		</div>
 	</li>
 	{% endfor %}
