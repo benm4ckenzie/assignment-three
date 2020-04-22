@@ -54,8 +54,8 @@
                 </span>
 			</div>
 			<div class="col s3 right-align">
-                <a class="waves-effect waves-light btn btn_small teal darken-4">Update book</a>
-				<a class="waves-effect waves-light btn btn_small teal darken-4">Add review</a>
+                <a href="{{ url_for('update_book', book_id=book._id)}}"class="waves-effect waves-light btn btn_small teal darken-4 col s12">Update book</a>
+				<a class="waves-effect waves-light btn btn_small teal darken-4 col s12">Add review</a>
 			</div>
 		</div>
 	</li>

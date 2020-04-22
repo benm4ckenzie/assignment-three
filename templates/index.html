@@ -6,7 +6,7 @@
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
 
 </head>
 
@@ -33,10 +33,10 @@
 		</nav>
 	</div>
 
-    <div class="container">
-	{% block content %}
-	{% endblock %}
-    </div>
+	<div class="container">
+		{% block content %}
+		{% endblock %}
+	</div>
 
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -54,9 +54,28 @@
             document.getElementById("matfix").addEventListener("click", function(e) {
 	        e.stopPropagation();
             });
+            $('input.autocomplete').autocomplete({
+                data: {
+                    "Apple": null,
+                    "Microsoft": null,
+                    "Google": 'https://placehold.it/250x250'
+                    },
             });
+        });
 	</script>
 </body>
 
 
 </html>
+
+
+
+<!--$(document).ready(function(){
+    $('input.autocomplete').autocomplete({
+      data: {
+        "Apple": null,
+        "Microsoft": null,
+        "Google": 'https://placehold.it/250x250'
+      },
+    });
+  });
