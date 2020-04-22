@@ -36,14 +36,30 @@ def submit_book():
     return redirect(url_for('get_library'))
 
 
-@app.route('/update_book/<book_id>')
-def update_book(book_id):
+@app.route('/edit_book/<book_id>')
+def edit_book(book_id):
     the_book = mongo.db.book.find_one({"_id": ObjectId(book_id)})
-    all_author = mongo.db.author.find()
-    return render_template('editbook.html', book=the_book, author=all_author)
+    return render_template('editbook.html', book=the_book)
+
+
+@app.route('/update_book/<book_id>', methods=['POST'])
+def update_book(book_id):
+    book = mongo.db.book
+    book.update( {'_id': ObjectId(book_id)},
+    {
+        'genre_name':request.form.get('genre_name'),
+        'author_name':request.form.get('author_name'),
+        'book_title': request.form.get('book_title'),
+        'publisher_name': request.form.get('publisher_name'),
+        'release_date':request.form.get('release_date'),
+        'book_length':request.form.get('book_length'),
+        'isbn_13':request.form.get('isbn_13')  
+    })
+    return redirect(url_for('get_library'))
 
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
     port=int(os.environ.get('PORT')),
     debug=True)
+
