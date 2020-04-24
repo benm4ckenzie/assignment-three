@@ -7,6 +7,8 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" type="text/css" />
+
 
 </head>
 
@@ -31,37 +33,55 @@
 		</nav>
 	</div>
 
-<main>
-	<div class="container">
-		{% block content %}
-		{% endblock %}
-	</div>
-</main>
-    <footer class="page-footer teal darken-4">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
-          </div>
-        </footer>
+	<main>
+		<div class="container">
+			{% block content %}
+			{% endblock %}
+		</div>
+	</main>
+	<footer class="page-footer teal darken-4">
+		<div class="row">
+			<div class="col l8 s8">
+				<a href="{{ url_for('home') }}" class="white-text valign-wrapper">The Book Club</a>
+			</div>
+			<div class="col l2 s2">
+				<ul>
+					<li>
+						<a target="_blank" href="https://www.facebook.com/waterstones">
+							<i class="fab fa-facebook-square" aria-hidden="true"></i>
+							<span class="sr-only">Facebook</span>
+						</a>
+					</li>
+					<li>
+						<a target="_blank"
+							href="https://twitter.com/waterstones">
+							<i class="fab fa-twitter-square" aria-hidden="true"></i>
+							<span class="sr-only">Twitter</span>
+						</a>
+					</li>
+					<li class="list-inline-item">
+						<a target="_blank" href="https://www.instagram.com/waterstones/">
+							<i class="fab fa-instagram-square" aria-hidden="true"></i>
+							<span class="sr-only">Instagram</span>
+						</a>
+					</li>
+					<li class="list-inline-item">
+						<a target="_blank" href="https://www.pinterest.co.uk/waterstones/">
+							<i class="fab fa-pinterest-square" aria-hidden="true"></i>
+							<span class="sr-only">Pinterest</span>
+						</a>
+					</li>
+				</ul>
+
+			</div>
+			<div class="col l1 s1">
+				<a href="{{ url_for('about_page') }}" class="white-text valign-wrapper">About</a>
+			</div>
+			<div class="col l1 s1">
+				<a href="{{ url_for('contact_page') }}" class="white-text valign-wrapper">Contact</a>
+			</div>
+		</div>
+	</footer>
 
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

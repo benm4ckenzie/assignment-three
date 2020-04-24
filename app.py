@@ -37,6 +37,16 @@ def add_detail_page():
     return render_template('adddetail.html')
 
 
+@app.route('/contact_page')
+def contact_page():
+    return render_template('contact.html')
+
+
+@app.route('/about_page')
+def about_page():
+    return render_template('about.html')
+
+
 @app.route('/add_detail', methods=['POST'])
 def add_detail():
     title = mongo.db.title
