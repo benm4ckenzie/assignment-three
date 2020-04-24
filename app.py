@@ -28,9 +28,11 @@ def my_library():
 def home():
     return render_template('home.html')
 
+
 @app.route('/mylibrary')
 def mylibrary():
     return render_template('mylibrary.html')
+
 
 @app.route('/add_detail_page')
 def add_detail_page():
