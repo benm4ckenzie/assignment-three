@@ -32,9 +32,16 @@ def home():
 def mylibrary():
     return render_template('mylibrary.html')
 
-@app.route('/add_detail')
-def add_detail():
+@app.route('/add_detail_page')
+def add_detail_page():
     return render_template('adddetail.html')
+
+
+@app.route('/add_detail', methods=['POST'])
+def add_detail():
+    title = mongo.db.title
+    title.insert_one(request.form.to_dict())
+    return redirect(url_for('add_book'))
 
 
 @app.route('/add_book')
