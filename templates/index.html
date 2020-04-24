@@ -21,13 +21,11 @@
 		</ul>
 		<nav class="teal darken-4">
 			<div class="nav-wrapper">
-				<a href="#!" class="brand-logo">The Book Club</a>
+				<a href="{{ url_for('home') }}" class="brand-logo">The Book Club</a>
 				<ul class="right hide-on-med-and-down">
-					<li><a href="sass.html"><i class="material-icons">search</i></a></li>
-					<li><a href="badges.html"><i class="material-icons">local_library</i></a></li>
-					<li><a href="collapsible.html"><i class="material-icons">library_books</i></a></li>
-					<li><a class="dropdown-trigger" href="mobile.html"
-							data-target="dropdown1"><i class="material-icons">library_add</i></a></li>
+					<li><a href="{{ url_for('my_library') }}"><i class="material-icons">local_library</i></a></li>
+					<li><a href="{{ url_for('get_library') }}"><i class="material-icons">library_books</i></a></li>
+					<li><a href="{{ url_for('add_book') }}"><i class="material-icons">library_add</i></a></li>
 				</ul>
 			</div>
 		</nav>

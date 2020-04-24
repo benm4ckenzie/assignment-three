@@ -33,26 +33,22 @@
                 </select>
                 <label>Genre</label>
             </div>
-            <div class="input-field col s12">
-                <select id="publisher_name" name="publisher_name">
-                    <option value="" disabled selected>Choose publisher</option>
-                    {% for pub in publisher %}
-                    <option value="{{pub.publisher_name}}">{{pub.publisher_name}}</option>
-                    {% endfor %}
-                </select>
-                <label>Publisher</label>
-            </div>
-			<div class="input-field col s2">
+			<div class="input-field col s3">
 				<i class="material-icons prefix">menu_book</i>
 				<input id="book_length" name="book_length" type="text" class="autocomplete">
 				<label for="autocomplete-input">Book length</label>
 			</div>
-			<div id="matfix" class="input-field col s5">
+			<div class="input-field col s5">
+				<i class="material-icons prefix">collections_bookmark</i>
+				<input id="publisher_name" name="publisher_name" type="text" class="autocomplete">
+				<label for="autocomplete-input">Publisher</label>
+			</div>
+			<div id="matfix" class="input-field col s3">
 				<i class="material-icons prefix">today</i>
 				<input id="release_date" name="release_date" type="text" class="datepicker">
 				<label for="autocomplete-input">Release date</label>
 			</div>
-			<div class="input-field col s5">
+			<div class="input-field col s4">
 				<i class="material-icons prefix">code</i>
 				<input id="isbn_13" name="isbn_13" type="text" class="autocomplete">
 				<label for="autocomplete-input">ISBN 13</label>

@@ -21,10 +21,10 @@
 				<i class="material-icons valign-wrapper">expand_more</i>
 				{{book.author_name}} - <strong>{{book.book_title}}</strong>
 			</div>
-			<div  class="col s3 task_header">
+			<div class="col s3 task_header">
 				<div class="switch right-align">
 					<label>
-                    <input action="{{ url_for('add_to_mylibrary') }}" method="POST" type="checkbox">
+                    <input disabled type="checkbox">
                     <span class="lever"></span>
                     Add to 'My Library'
                     </label>

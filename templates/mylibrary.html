@@ -14,19 +14,18 @@
 </div>
 
 <ul class="collapsible">
-	{% for book in book %}
+	{% for book in reader %}
 	<li>
 		<div class="row collapsible-header" style="margin: 0px;">
 			<div class="col s9">
 				<i class="material-icons valign-wrapper">expand_more</i>
 				{{book.author_name}} - <strong>{{book.book_title}}</strong>
 			</div>
-			<div  class="col s3 task_header">
+			<div class="col s3 task_header">
 				<div class="switch right-align">
 					<label>
-                    <input action="{{ url_for('add_to_mylibrary') }}" method="POST" type="checkbox">
-                    <span class="lever"></span>
-                    Add to 'My Library'
+                        <input type="checkbox" />
+                        <span>Read</span>
                     </label>
 				</div>
 			</div>
@@ -54,7 +53,7 @@
                 </span>
 			</div>
 			<div class="col s3 right-align">
-                <a href="{{ url_for('edit_book', book_id=book._id)}}"class="waves-effect waves-light btn btn_small teal darken-4 col s12">Update book</a>
+				<a class="waves-effect waves-light btn btn_small teal darken-4 col s12">Delete book</a>
 				<a class="waves-effect waves-light btn btn_small teal darken-4 col s12">Add review</a>
 			</div>
 		</div>
