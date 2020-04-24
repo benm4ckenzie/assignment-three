@@ -24,3 +24,7 @@
 .task_header {
     margin-top: 5px;
 }
+
+.alert {
+    height: 50px;
+}

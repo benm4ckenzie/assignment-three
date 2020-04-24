@@ -32,6 +32,10 @@ def home():
 def mylibrary():
     return render_template('mylibrary.html')
 
+@app.route('/add_detail')
+def add_detail():
+    return render_template('adddetail.html')
+
 
 @app.route('/add_book')
 def add_book():
