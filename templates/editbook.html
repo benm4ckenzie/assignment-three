@@ -6,8 +6,8 @@
 <div class="row">
 	<form action="{{ url_for('update_book', book_id=book._id) }}" method="POST" class="col s12">
 		<div class="row">
-			<div class="input-field col s12">
-				<i class="material-icons prefix">book</i>
+            <div class="input-field col s6">
+				<i class="material-icons prefix">create</i>
 				<input id="book_title" name="book_title" type="text" class="autocomplete" value="{{book.book_title}}">
 				<label for="autocomplete-input">Book title</label>
 			</div>

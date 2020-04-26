@@ -4,24 +4,26 @@
 <h3>Add detail</h3>
 
 <div class="row">
-	<form action="{{ url_for('add_detail') }}" method="POST" class="col s12">
+	<form action="" method="POST" class="col s12">
 		<div class="row">
 			<div class="input-field col s12">
+				{% for title in title %}
 				<i class="material-icons prefix">collections_bookmark</i>
 				<input id="book_title" name="book_title" type="text" class="validate">
-				<label for="autocomplete-input">Book title</label>
+				<label for="autocomplete-input">{{title.book_title}}</label>
+				{% endfor %}
 			</div>
-            <div class="input-field col s12">
+			<div class="input-field col s12">
 				<i class="material-icons prefix">collections_bookmark</i>
 				<input id="author_name" name="author_name" type="text" class="validate">
 				<label for="autocomplete-input">Author's name</label>
 			</div>
-            <div class="input-field col s12">
+			<div class="input-field col s12">
 				<i class="material-icons prefix">collections_bookmark</i>
 				<input id="genre_name" name="genre_name" type="text" class="validate">
 				<label for="autocomplete-input">Genre</label>
 			</div>
-            <div class="input-field col s12">
+			<div class="input-field col s12">
 				<i class="material-icons prefix">collections_bookmark</i>
 				<input id="publisher_name" name="publisher_name" type="text" class="validate">
 				<label for="autocomplete-input">Publisher's name</label>
@@ -31,7 +33,7 @@
 
 
 
-			
+
 			<div class="row">
 				<div class="input-field col s12">
 					<button class="btn waves-effect waves-light btn_small teal darken-4" type="submit" name="action">

@@ -1,37 +1,65 @@
 {% extends 'index.html' %}
 {% block content %}
 <div class="container">
- <div class="slider">
-    <ul class="slides">
-      <li>
-        <img src="../static/images/library_image_1.png" title="Library 1" alt="Classic library"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>The Book Club</h3>
-          <h5 class="light grey-text text-lighten-3">Your online library.</h5>
-        </div>
-      </li>
-      <li>
-        <img src="../static/images/library_image_2.jpg"> <!-- random image -->
-        <div class="caption left-align">
-          <h3>Add books to our extensive library.</h3>
-          <h5 class="light grey-text text-lighten-3">And search for new titles.</h5>
-        </div>
-      </li>
-      <li>
-        <img src="../static/images/library_image_3.jpg"> <!-- random image -->
-        <div class="caption right-align">
-          <h3>Review books in the library.</h3>
-          <h5 class="light grey-text text-lighten-3">And make recommendations for other reading enthusiasts.</h5>
-        </div>
-      </li>
-      <li>
-        <img src="../static/images/library_image_4.jpg"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>Create your own collection.</h3>
-          <h5 class="light grey-text text-lighten-3">Want to make a 'To read' list? Then do it.</h5>
-        </div>
-      </li>
-    </ul>
-  </div>
+	<div class="row">
+		<div class="center-align col s12">
+			<h5>This should be vertically aligned</h5>
+		</div>
+		<div class="container-fluid callout-container">
+			<!-- Callout -->
+			<div class="opaque-overlay">&nbsp;</div>
+			<div class="row">
+				<div class="col-12">
+					<section class="callout jumbotron text-center">
+						<h1 class="jumbotron-header">The finest whiskeys delivered to your doorstep.</h1>
+						<hr class="block-divider block-divider--orange">
+						<p class="lead">Sign up today to start receiving the world's best whiskeys every month.
+							<s class="d-none d-sm-inline">€19.99</s>
+							<span class="d-inline d-sm-none"><br></span>
+							<strong><mark>First one is free!</mark></strong></p>
+						<button class="btn btn-lg btn--cta btn--red" data-toggle="modal" data-target="#signUpModal">Sign Up!</button>
+						<p class="text-muted">
+							<small>You must be over 18 to sign up to our service. Please, drink responsibly.</small></p>
+					</section>
+				</div>
+			</div>
+			<!-- /.callout -->
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="slider">
+		<ul class="slides">
+			<li>
+				<img src="../static/images/library_image_1.png" title="Library 1" alt="Classic library">
+				<div class="caption center-align">
+					<h3>The Book Club</h3>
+					<h5 class="light grey-text text-lighten-3">Your online library.</h5>
+				</div>
+			</li>
+			<li>
+				<img src="../static/images/library_image_2.jpg">
+				<div class="caption left-align">
+					<h3>Add books to our extensive library.</h3>
+					<h5 class="light grey-text text-lighten-3">And search for new titles.</h5>
+				</div>
+			</li>
+			<li>
+				<img src="../static/images/library_image_3.jpg">
+				<div class="caption right-align">
+					<h3>Review books in the library.</h3>
+					<h5 class="light grey-text text-lighten-3">And make recommendations for other reading
+						enthusiasts.</h5>
+				</div>
+			</li>
+			<li>
+				<img src="../static/images/library_image_4.jpg">
+				<div class="caption center-align">
+					<h3>Create your own collection.</h3>
+					<h5 class="light grey-text text-lighten-3">Want to make a 'To read' list? Then do it.</h5>
+				</div>
+			</li>
+		</ul>
+	</div>
 </div>
 {% endblock %}

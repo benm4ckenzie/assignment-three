@@ -21,7 +21,7 @@ def get_library():
 @app.route('/')
 @app.route('/my_library')
 def my_library():
-    return render_template('mylibrary.html', book=mongo.db.book.find()) 
+    return render_template('mylibrary.html', reader=mongo.db.reader.find()) 
 
 
 @app.route('/home')
@@ -31,7 +31,7 @@ def home():
 
 @app.route('/mylibrary')
 def mylibrary():
-    return render_template('mylibrary.html')
+    return render_template('mylibrary.html', reader=mongo.db.reader.find())
 
 
 @app.route('/add_detail_page')
@@ -52,8 +52,24 @@ def about_page():
 @app.route('/add_detail', methods=['POST'])
 def add_detail():
     title = mongo.db.title
-    title.insert_one(request.form.to_dict())
+    title.insert_one(request.form.to_dict()),
+    author = mongo.db.author
+    author.insert_one(request.form.to_dict()),
+    genre = mongo.db.genre
+    genre.insert_one(request.form.to_dict()),
+    publisher = mongo.db.publisher
+    publisher.insert_one(request.form.to_dict())
     return redirect(url_for('add_book'))
+
+
+@app.route('/read_book/<reader_id>', methods=['POST'])
+def read_book(reader_id):
+    reader = mongo.db.reader
+    reader.update( {'_id': ObjectId(reader_id)},
+    {
+        'read_book':request.form.get('read_book'),  
+    })
+    return redirect(url_for('mylibrary'))
 
 
 @app.route('/add_book')
@@ -99,6 +115,13 @@ def update_book(book_id):
         'isbn_13':request.form.get('isbn_13')  
     })
     return redirect(url_for('get_library'))
+
+
+@app.route('/delete_book/<reader_id>')
+def delete_book(reader_id):
+    mongo.db.reader.remove({'_id': ObjectId(reader_id)})
+    return redirect(url_for('mylibrary'))
+
 
 
 if __name__ == '__main__':
