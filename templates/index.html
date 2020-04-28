@@ -100,12 +100,37 @@
             document.getElementById("matfix").addEventListener("click", function(e) {
 	        e.stopPropagation();
             });
-            $('input.autocomplete').autocomplete({
+            $('input.autocomplete_title').autocomplete({
                 data: {
                     {% for title in title %}
                     "{{title.book_title}}": null,
                     {% endfor %}
                     },
+                    limit: 5,
+            });
+            $('input.autocomplete_author').autocomplete({
+                data: {
+                    {% for author in author %}
+                    "{{author.author_name}}": null,
+                    {% endfor %}
+                    },
+                    limit: 5,
+            });
+            $('input.autocomplete_genre').autocomplete({
+                data: {
+                    {% for genre in genre %}
+                    "{{genre.genre_name}}": null,
+                    {% endfor %}
+                    },
+                    limit: 5,
+            });
+            $('input.autocomplete_publisher').autocomplete({
+                data: {
+                    {% for publisher in publisher %}
+                    "{{publisher.publisher_name}}": null,
+                    {% endfor %}
+                    },
+                    limit: 5,
             });
         });
 </script>

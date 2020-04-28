@@ -16,24 +16,24 @@
 <div class="row">
 	<form action="{{ url_for('submit_book') }}" method="POST" class="col s12">
 		<div class="row">
-			<div class="input-field col s12">
+			<div action="{{ url_for('add_detail') }}" method="POST" class="input-field col s12">
 				<i class="material-icons prefix">menu_book</i>
-				<input id="book_title" name="book_title" type="text" class="autocomplete">
-          <label for="autocomplete-input">Book title</label>
+				<input id="book_title" name="book_title" type="text" class="autocomplete_title">
+                <label for="autocomplete-input">Book title</label>
 			</div>
             <div class="input-field col s12">
 				<i class="material-icons prefix">menu_book</i>
-				<input id="author_name" name="author_name" type="text" class="autocomplete">
-          <label for="autocomplete-input">Author name</label>
+				<input id="author_name" name="author_name" type="text" class="autocomplete_author">
+                <label for="autocomplete-input">Author name</label>
 			</div>
             <div class="input-field col s12">
 				<i class="material-icons prefix">menu_book</i>
-				<input id="genre_name" name="genre_name" type="text" class="autocomplete">
+				<input id="genre_name" name="genre_name" type="text" class="autocomplete_genre">
           <label for="autocomplete-input">Genre</label>
 			</div>
             <div class="input-field col s12">
 				<i class="material-icons prefix">menu_book</i>
-				<input id="publisher_name" name="publisher_name" type="text" class="autocomplete">
+				<input id="publisher_name" name="publisher_name" type="text" class="autocomplete_publisher">
           <label for="autocomplete-input">Publisher name</label>
 			</div>
 			<div class="input-field col s2">

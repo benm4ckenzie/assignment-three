@@ -52,14 +52,8 @@ def about_page():
 @app.route('/add_detail', methods=['POST'])
 def add_detail():
     title = mongo.db.title
-    title.insert_one(request.form.to_dict()),
-    author = mongo.db.author
-    author.insert_one(request.form.to_dict()),
-    genre = mongo.db.genre
-    genre.insert_one(request.form.to_dict()),
-    publisher = mongo.db.publisher
-    publisher.insert_one(request.form.to_dict())
-    return redirect(url_for('add_book'))
+    title.insert_one(request.form.to_dict())
+    return redirect(url_for('get_library'))
 
 
 @app.route('/read_book/<reader_id>', methods=['POST'])
@@ -67,7 +61,7 @@ def read_book(reader_id):
     reader = mongo.db.reader
     reader.update( {'_id': ObjectId(reader_id)},
     {
-        'read_book':request.form.get('read_book'),  
+        'read_book':request.form.get('read_book')  
     })
     return redirect(url_for('mylibrary'))
 
@@ -95,6 +89,7 @@ def add_to_mylibrary():
     return redirect(url_for('mylibrary'))
 
 
+
 @app.route('/edit_book/<book_id>')
 def edit_book(book_id):
     the_book = mongo.db.book.find_one({"_id": ObjectId(book_id)})
@@ -104,7 +99,7 @@ def edit_book(book_id):
 @app.route('/update_book/<book_id>', methods=['POST'])
 def update_book(book_id):
     book = mongo.db.book
-    book.update( {'_id': ObjectId(book_id)},
+    book.update({'_id': ObjectId(book_id)},
     {
         'genre_name':request.form.get('genre_name'),
         'author_name':request.form.get('author_name'),
