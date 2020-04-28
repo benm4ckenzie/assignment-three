@@ -17,40 +17,24 @@
 	<form action="{{ url_for('submit_book') }}" method="POST" class="col s12">
 		<div class="row">
 			<div class="input-field col s12">
-				<select id="book_title" name="book_title">
-                    <option value="" disabled selected>Choose book title</option>
-                    {% for title in title %}
-                    <option value="{{title.book_title}}">{{title.book_title}}</option>
-                    {% endfor %}
-                </select>
-				<label>Book title</label>
+				<i class="material-icons prefix">menu_book</i>
+				<input id="book_title" name="book_title" type="text" class="autocomplete">
+          <label for="autocomplete-input">Book title</label>
 			</div>
-			<div class="input-field col s12">
-				<select id="author_name" name="author_name">
-                    <option value="" disabled selected>Choose author</option>
-                    {% for aut in author %}
-                    <option value="{{aut.author_name}}">{{aut.author_name}}</option>
-                    {% endfor %}
-                </select>
-				<label>Author name</label>
+            <div class="input-field col s12">
+				<i class="material-icons prefix">menu_book</i>
+				<input id="author_name" name="author_name" type="text" class="autocomplete">
+          <label for="autocomplete-input">Author name</label>
 			</div>
-			<div class="input-field col s12">
-				<select id="genre_name" name="genre_name">
-                    <option value="" disabled selected>Choose genre</option>
-                    {% for gen in genre %}
-                    <option value="{{gen.genre_name}}">{{gen.genre_name}}</option>
-                    {% endfor %}
-                </select>
-				<label>Genre</label>
+            <div class="input-field col s12">
+				<i class="material-icons prefix">menu_book</i>
+				<input id="genre_name" name="genre_name" type="text" class="autocomplete">
+          <label for="autocomplete-input">Genre</label>
 			</div>
-			<div class="input-field col s12">
-				<select id="publisher_name" name="publisher_name">
-                    <option value="" disabled selected>Choose publisher</option>
-                    {% for pub in publisher %}
-                    <option value="{{pub.publisher_name}}">{{pub.publisher_name}}</option>
-                    {% endfor %}
-                </select>
-				<label>Publisher</label>
+            <div class="input-field col s12">
+				<i class="material-icons prefix">menu_book</i>
+				<input id="publisher_name" name="publisher_name" type="text" class="autocomplete">
+          <label for="autocomplete-input">Publisher name</label>
 			</div>
 			<div class="input-field col s2">
 				<i class="material-icons prefix">menu_book</i>

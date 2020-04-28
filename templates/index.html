@@ -7,88 +7,88 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+		type="text/css" />
 
 
 </head>
 
-	<div class="navbar-fixed">
-		<ul id="dropdown1" class="dropdown-content">
-			<li><a href="#!">Add book</a></li>
-			<li><a href="#!">Edit book</a></li>
-			<li class="divider"></li>
-			<li><a href="#!">Delete book</a></li>
-		</ul>
-		<nav class="teal darken-4">
-			<div class="nav-wrapper">
-				<a href="{{ url_for('home') }}" class="brand-logo">The Book Club</a>
-				<ul class="right hide-on-med-and-down">
-					<li><a href="{{ url_for('my_library') }}"><i class="material-icons">local_library</i></a></li>
-					<li><a href="{{ url_for('get_library') }}"><i class="material-icons">library_books</i></a></li>
-					<li><a href="{{ url_for('add_book') }}"><i class="material-icons">library_add</i></a></li>
-				</ul>
-			</div>
-		</nav>
+<div class="navbar-fixed">
+	<ul id="dropdown1" class="dropdown-content">
+		<li><a href="#!">Add book</a></li>
+		<li><a href="#!">Edit book</a></li>
+		<li class="divider"></li>
+		<li><a href="#!">Delete book</a></li>
+	</ul>
+	<nav class="teal darken-4">
+		<div class="nav-wrapper">
+			<a href="{{ url_for('home') }}" class="brand-logo">The Book Club</a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="{{ url_for('my_library') }}"><i class="material-icons">local_library</i></a></li>
+				<li><a href="{{ url_for('get_library') }}"><i class="material-icons">library_books</i></a></li>
+				<li><a href="{{ url_for('add_book') }}"><i class="material-icons">library_add</i></a></li>
+			</ul>
+		</div>
+	</nav>
+</div>
+
+
+<main class="background-image">
+	<div class="container">
+		{% block content %}
+		{% endblock %}
 	</div>
+</main>
 
-    
-	<main class="background-image">
-		<div class="container">
-			{% block content %}
-			{% endblock %}
+
+<footer class="page-footer teal darken-4">
+	<div class="row">
+		<div class="col l8 s8">
+			<a href="{{ url_for('home') }}" class="white-text valign-wrapper">The Book Club</a>
 		</div>
-	</main>
+		<div class="col l2 s2">
+			<ul class="list-inline social-links">
+				<li class="list-inline-item">
+					<a target="_blank" href="https://www.facebook.com/waterstones">
+						<i class="fab fa-facebook-square" aria-hidden="true"></i>
+						<span class="sr-only">Facebook</span>
+					</a>
+				</li>
+				<li class="list-inline-item">
+					<a target="_blank" href="https://twitter.com/waterstones">
+						<i class="fab fa-twitter-square" aria-hidden="true"></i>
+						<span class="sr-only">Twitter</span>
+					</a>
+				</li>
+				<li class="list-inline-item">
+					<a target="_blank" href="https://www.instagram.com/waterstones/">
+						<i class="fab fa-instagram-square" aria-hidden="true"></i>
+						<span class="sr-only">Instagram</span>
+					</a>
+				</li>
+				<li class="list-inline-item">
+					<a target="_blank" href="https://www.pinterest.co.uk/waterstones/">
+						<i class="fab fa-pinterest-square" aria-hidden="true"></i>
+						<span class="sr-only">Pinterest</span>
+					</a>
+				</li>
+			</ul>
 
-
-	<footer class="page-footer teal darken-4">
-		<div class="row">
-			<div class="col l8 s8">
-				<a href="{{ url_for('home') }}" class="white-text valign-wrapper">The Book Club</a>
-			</div>
-			<div class="col l2 s2">
-				<ul class="list-inline social-links">
-					<li class="list-inline-item">
-						<a target="_blank" href="https://www.facebook.com/waterstones">
-							<i class="fab fa-facebook-square" aria-hidden="true"></i>
-							<span class="sr-only">Facebook</span>
-						</a>
-					</li>
-					<li class="list-inline-item">
-						<a target="_blank"
-							href="https://twitter.com/waterstones">
-							<i class="fab fa-twitter-square" aria-hidden="true"></i>
-							<span class="sr-only">Twitter</span>
-						</a>
-					</li>
-					<li class="list-inline-item">
-						<a target="_blank" href="https://www.instagram.com/waterstones/">
-							<i class="fab fa-instagram-square" aria-hidden="true"></i>
-							<span class="sr-only">Instagram</span>
-						</a>
-					</li>
-					<li class="list-inline-item">
-						<a target="_blank" href="https://www.pinterest.co.uk/waterstones/">
-							<i class="fab fa-pinterest-square" aria-hidden="true"></i>
-							<span class="sr-only">Pinterest</span>
-						</a>
-					</li>
-				</ul>
-
-			</div>
-			<div class="col l1 s1">
-				<a href="{{ url_for('about_page') }}" class="white-text">About</a>
-			</div>
-			<div class="col l1 s1">
-				<a href="{{ url_for('contact_page') }}" class="white-text">Contact</a>
-			</div>
 		</div>
-	</footer>
+		<div class="col l1 s1">
+			<a href="{{ url_for('about_page') }}" class="white-text">About</a>
+		</div>
+		<div class="col l1 s1">
+			<a href="{{ url_for('contact_page') }}" class="white-text">Contact</a>
+		</div>
+	</div>
+</footer>
 
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
 	        $('.collapsible').collapsible();
             $('.dropdown-trigger').dropdown();
             $('.slider').slider();
@@ -102,13 +102,13 @@
             });
             $('input.autocomplete').autocomplete({
                 data: {
-                    "Apple": null,
-                    "Microsoft": null,
-                    "Google": 'https://placehold.it/250x250'
+                    {% for title in title %}
+                    "{{title.book_title}}": null,
+                    {% endfor %}
                     },
             });
         });
-	</script>
+</script>
 
 
 </html>
