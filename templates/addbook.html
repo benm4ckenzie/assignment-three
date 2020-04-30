@@ -3,38 +3,32 @@
 
 <h3>Add book</h3>
 
-<div class="row">
-	<div class="alert amber darken-3 center-align valign-wrapper">
-		<div class="text col s9">
-            <p>Can't find the information you are looking for?</p>
-		</div>
-        <div>
-	        <a href="{{ url_for('add_detail_page') }}" class="waves-effect waves-light btn teal darken-4 col s3">Add it here</a>
-        </div>
-    </div>
-</div>
+
 <div class="row">
 	<form action="{{ url_for('submit_book') }}" method="POST" class="col s12">
 		<div class="row">
-			<div action="{{ url_for('add_detail') }}" method="POST" class="input-field col s12">
+			<div class="input-field col s12">
 				<i class="material-icons prefix">menu_book</i>
 				<input id="book_title" name="book_title" type="text" class="autocomplete_title">
-                <label for="autocomplete-input">Book title</label>
+				<label for="autocomplete-input">Book title</label>
 			</div>
-            <div class="input-field col s12">
+			<div class="input-field col s12">
 				<i class="material-icons prefix">menu_book</i>
 				<input id="author_name" name="author_name" type="text" class="autocomplete_author">
-                <label for="autocomplete-input">Author name</label>
+				<label for="autocomplete-input">Author name 
+                </label>
 			</div>
-            <div class="input-field col s12">
+			<div class="input-field col s12">
 				<i class="material-icons prefix">menu_book</i>
 				<input id="genre_name" name="genre_name" type="text" class="autocomplete_genre">
-          <label for="autocomplete-input">Genre</label>
+				<label for="autocomplete-input">Genre</label>
 			</div>
-            <div class="input-field col s12">
+			<div class="input-field col s12">
 				<i class="material-icons prefix">menu_book</i>
 				<input id="publisher_name" name="publisher_name" type="text" class="autocomplete_publisher">
-          <label for="autocomplete-input">Publisher name</label>
+				<label for="autocomplete-input">
+                Publisher name
+                </label>
 			</div>
 			<div class="input-field col s2">
 				<i class="material-icons prefix">menu_book</i>

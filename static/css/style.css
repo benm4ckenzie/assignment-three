@@ -38,3 +38,25 @@ body {
   main {
     flex: 1 0 auto;
   }
+  
+
+
+
+/*@app.route('/update_book/<author_id>', methods=['POST'])
+def update_book(author_id):
+    author = mongo.db.author
+    author.update({'_id': ObjectId(author_id)},
+    {
+        'author_name':request.form.get('author_name')
+    })
+                data: {
+                    {% for author in author %}
+                    "{{author.author_name}}": null,
+                    {% endfor %}
+                    },
+                    limit: 5,
+            });
+    
+
+
+  

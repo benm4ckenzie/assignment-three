@@ -49,6 +49,11 @@ def about_page():
     return render_template('about.html')
 
 
+@app.route('/enquiry_return')
+def enquiry_return():
+    return render_template('enquiryreturn.html')
+
+
 @app.route('/add_detail', methods=['POST'])
 def add_detail():
     title = mongo.db.title
@@ -69,14 +74,30 @@ def read_book(reader_id):
 @app.route('/add_book')
 def add_book():
     return render_template('addbook.html',
-    title = mongo.db.title.find(),
-    author = mongo.db.author.find(),
-    genre = mongo.db.genre.find(),
-    publisher = mongo.db.publisher.find())
+        title=mongo.db.title.find(),
+        author=mongo.db.author.find(),
+        genre=mongo.db.genre.find(),
+        publisher=mongo.db.publisher.find())
 
 
 @app.route('/submit_book', methods=['POST'])
 def submit_book():
+    author_name = request.form.get('author_name')
+    author = mongo.db.author.find_one({"author_name": author_name})
+    if author is None:
+        mongo.db.author.insert_one({'author_name': author_name})
+    book_title = request.form.get('book_title')
+    title = mongo.db.title.find_one({"book_title": book_title})
+    if title is None:
+        mongo.db.title.insert_one({'book_title': book_title})
+    genre_name = request.form.get('genre_name')
+    genre = mongo.db.genre.find_one({"genre_name": genre_name})
+    if genre is None:
+        mongo.db.genre.insert_one({'genre_name': genre_name})
+    publisher_name = request.form.get('publisher_name')
+    publisher = mongo.db.publisher.find_one({"publisher_name": publisher_name})
+    if publisher is None:
+        mongo.db.publisher.insert_one({'publisher_name': publisher_name})
     book = mongo.db.book
     book.insert_one(request.form.to_dict())
     return redirect(url_for('get_library'))
@@ -94,7 +115,7 @@ def add_to_mylibrary():
 def edit_book(book_id):
     the_book = mongo.db.book.find_one({"_id": ObjectId(book_id)})
     return render_template('editbook.html', book=the_book)
-
+      
 
 @app.route('/update_book/<book_id>', methods=['POST'])
 def update_book(book_id):

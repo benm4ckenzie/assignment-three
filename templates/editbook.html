@@ -6,37 +6,38 @@
 <div class="row">
 	<form action="{{ url_for('update_book', book_id=book._id) }}" method="POST" class="col s12">
 		<div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12">
 				<i class="material-icons prefix">create</i>
 				<input id="book_title" name="book_title" type="text" class="autocomplete" value="{{book.book_title}}">
 				<label for="autocomplete-input">Book title</label>
 			</div>
-			<div class="input-field col s6">
+			<div class="input-field col s12">
 				<i class="material-icons prefix">create</i>
 				<input id="author_name" name="author_name" type="text" class="autocomplete" value="{{book.author_name}}">
 				<label for="autocomplete-input">Author</label>
 			</div>
-			<div class="input-field col s6">
+			<div class="input-field col s12">
 				<i class="material-icons prefix">tune</i>
 				<input id="genre_name" name="genre_name" type="text" class="autocomplete" value="{{book.genre_name}}">
 				<label for="autocomplete-input">Genre</label>
 			</div>
-			<div class="input-field col s3">
-				<i class="material-icons prefix">menu_book</i>
-				<input id="book_length" name="book_length" type="text" class="autocomplete" value="{{book.book_length}}">
-				<label for="autocomplete-input">Book length</label>
-			</div>
-			<div class="input-field col s5">
+            <div class="input-field col s12">
 				<i class="material-icons prefix">collections_bookmark</i>
 				<input id="publisher_name" name="publisher_name" type="text" class="autocomplete" value="{{book.publisher_name}}">
 				<label for="autocomplete-input">Publisher</label>
 			</div>
-			<div id="matfix" class="input-field col s3">
+			<div class="input-field col s2">
+				<i class="material-icons prefix">menu_book</i>
+				<input id="book_length" name="book_length" type="text" class="autocomplete" value="{{book.book_length}}">
+				<label for="autocomplete-input">Book length</label>
+			</div>
+			
+			<div id="matfix" class="input-field col s5">
 				<i class="material-icons prefix">today</i>
 				<input id="release_date" name="release_date" type="text" class="datepicker" value="{{book.release_date}}">
 				<label for="autocomplete-input">Release date</label>
 			</div>
-			<div class="input-field col s4">
+			<div class="input-field col s5">
 				<i class="material-icons prefix">code</i>
 				<input id="isbn_13" name="isbn_13" type="text" class="autocomplete" value="{{book.isbn_13}}">
 				<label for="autocomplete-input">ISBN 13</label>
