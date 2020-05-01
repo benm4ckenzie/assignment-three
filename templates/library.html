@@ -1,8 +1,8 @@
 {% extends 'index.html' %}
 {% block content %}
-
+<h3>Library</h3>
 <div class="row">
-	<form action="{{ url_for('add_to_mylibrary') }}" method="POST" class="col s12">
+	<form action="{{ url_for('add_to_mylibrary', book_id=book._id) }}" method="POST" class="col s12">
 		<ul class="collapsible">
 			{% for book in book %}
 			<li>
@@ -11,7 +11,7 @@
 						<i class="material-icons valign-wrapper">expand_more</i>
 						{{book.author_name}} - <strong>{{book.book_title}}</strong>
 					</div>
-					<div action="{{ url_for('add_to_mylibrary') }}" method="POST" class="col s3 task_header">
+					<div class="col s3 task_header">
 						<div class="switch right-align">
 							<button class="btn waves-effect waves-light teal darken-4" type="submit" name="reader_library">Add to My Library
                             </button>

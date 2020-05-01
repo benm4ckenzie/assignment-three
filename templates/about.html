@@ -1,4 +1,18 @@
 {% extends 'index.html' %}
 {% block content %}
-
+<div class="container">
+	<div class="row">
+		<div class="col s12">
+        <h4 class="center-align">About The Book Club</h4>
+        <p>The Book Club, established in 2020, has been developed with the reader in mind. It provides the user with the ability to maintain an individual library of books, books that they have read, books they hope to read, and how the user rated the books they have finished.
+        <br>
+        <br>
+        Furthermore, The Book Club acts as a central library database where the user can explore books from various authors, genres, and publishers, with a view to adding these books to their own library with the prospect of reading them in the future. No longer want a book in your library? Simply delete it.
+<br>
+<br>
+        If you have any suggestions that could improve the usability of the website, or features that could improve your experience, or you simply just want to say hello, please send us a 
+        <a href="{{ url_for('contact_page') }}"> message</a> via our contact page.
+        </div>
+	</div>
+</div>
 {% endblock %}

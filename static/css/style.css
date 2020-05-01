@@ -58,5 +58,24 @@ def update_book(author_id):
             });
     
 
+@app.route('/add_to_mylibrary', methods=['POST'])
+def add_to_mylibrary():
+    reader = mongo.db.reader.insert_one()
+    return redirect(url_for('mylibrary'))
+ 
 
-  
+
+ my_book = request.form.get({"_id": ObjectId(book_id)})
+    publisher = mongo.db.publisher.find_one({"publisher_name": publisher_name})
+    if publisher is None:
+        mongo.db.publisher.insert_one({'publisher_name': publisher_name})
+    book = mongo.db.book
+    book.insert_one(request.form.to_dict())
+
+
+
+    book = mongo.db.book
+    mongo.db.book.find_one({"_id": ObjectId(book_id)})
+    reader = mongo.db.reader
+    reader.insert_one(request.form.to_dict())
+    return redirect(url_for('mylibrary'))

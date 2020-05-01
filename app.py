@@ -18,7 +18,7 @@ def get_library():
     return render_template('library.html', book=mongo.db.book.find())
 
 
-@app.route('/')
+
 @app.route('/my_library')
 def my_library():
     return render_template('mylibrary.html', reader=mongo.db.reader.find()) 
@@ -103,12 +103,11 @@ def submit_book():
     return redirect(url_for('get_library'))
 
 
-@app.route('/add_to_mylibrary', methods=['POST'])
-def add_to_mylibrary():
-    reader = mongo.db.reader
-    reader.insert_one(request.form.to_dict())
-    return redirect(url_for('mylibrary'))
-
+@app.route('/add_to_mylibrary/<book_id>', methods=['POST'])
+def add_to_mylibrary(book_id):
+    my_book = mongo.db.book.find({"_id": ObjectId(book_id)})
+    mongo.db.reader.insert_one(my_book)
+    return render_template('mylibrary.html')
 
 
 @app.route('/edit_book/<book_id>')
