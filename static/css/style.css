@@ -1,6 +1,14 @@
+html {
+    font-family: 'Libre Baskerville', serif;
+}
 /*------------------------------------------------------------------------------BACKGROUND*/
 
-/*.background-image {
+
+
+
+
+
+.background-image {
     height: 75vh;
     background: url('../images/library_image_7.jpg') no-repeat center top fixed;
     -webkit-background-size: cover;
@@ -38,44 +46,12 @@ body {
   main {
     flex: 1 0 auto;
   }
-  
 
+  .text-box {
+    background-color: rgba(128, 128, 128, 0.8);
+    border-radius: 10px;
+}
 
-
-/*@app.route('/update_book/<author_id>', methods=['POST'])
-def update_book(author_id):
-    author = mongo.db.author
-    author.update({'_id': ObjectId(author_id)},
-    {
-        'author_name':request.form.get('author_name')
-    })
-                data: {
-                    {% for author in author %}
-                    "{{author.author_name}}": null,
-                    {% endfor %}
-                    },
-                    limit: 5,
-            });
-    
-
-@app.route('/add_to_mylibrary', methods=['POST'])
-def add_to_mylibrary():
-    reader = mongo.db.reader.insert_one()
-    return redirect(url_for('mylibrary'))
- 
-
-
- my_book = request.form.get({"_id": ObjectId(book_id)})
-    publisher = mongo.db.publisher.find_one({"publisher_name": publisher_name})
-    if publisher is None:
-        mongo.db.publisher.insert_one({'publisher_name': publisher_name})
-    book = mongo.db.book
-    book.insert_one(request.form.to_dict())
-
-
-
-    book = mongo.db.book
-    mongo.db.book.find_one({"_id": ObjectId(book_id)})
-    reader = mongo.db.reader
-    reader.insert_one(request.form.to_dict())
-    return redirect(url_for('mylibrary'))
+.page-heading {
+    font-size: 40px;
+}

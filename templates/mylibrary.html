@@ -2,6 +2,24 @@
 {% block content %}
 <h3>My Library</h3>
 <div class="row">
+	<div class="input-field col s4">
+		<i class="material-icons prefix">menu_book</i>
+		<input id="book_title" name="book_title" type="text" class="autocomplete_title">
+		<label for="autocomplete-input">Book title</label>
+	</div>
+	<div class="input-field col s4">
+		<i class="material-icons prefix">menu_book</i>
+		<input id="author_name" name="author_name" type="text" class="autocomplete_author">
+		<label for="autocomplete-input">Author name 
+                </label>
+	</div>
+	<div class="input-field col s4">
+		<i class="material-icons prefix">menu_book</i>
+		<input id="genre_name" name="genre_name" type="text" class="autocomplete_genre">
+		<label for="autocomplete-input">Genre</label>
+	</div>
+</div>
+<div class="row">
 	<ul class="collapsible">
 		{% for reader in reader %}
 		<li>
@@ -13,10 +31,18 @@
 				<div class="col s3 task_header">
 					<div class="switch right-align">
 						<label>
-                    <input href="{{url_for('read_book', reader_id=reader._id)}}" type="checkbox">
+        <input href="{{url_for('read_book', reader_id=reader._id)}}" type="checkbox"/>
+        <span>Read?</span>
+      </label>
+
+      {% if task.is_urgent %}
+                    <input id="is_urgent" name="is_urgent" type="checkbox" checked>
+                    {% else %}
+                    <input id="is_urgent" name="is_urgent" type="checkbox">
+                    {% endif %}
                     <span class="lever"></span>
-                    Read book
-                    </label>
+                    Is urgent
+					
 					</div>
 				</div>
 			</div>
@@ -44,7 +70,8 @@
 				</div>
 				<div class="col s3 right-align">
 					<a href="{{url_for('delete_book', reader_id=reader._id)}}"
-						class="waves-effect waves-light btn btn_small teal darken-4 col s12">Delete book from library</a>
+						class="waves-effect waves-light btn btn_small teal darken-4 col s12">Delete book from
+						library</a>
 				</div>
 			</div>
 		</li>

@@ -24,6 +24,14 @@ def my_library():
     return render_template('mylibrary.html', reader=mongo.db.reader.find()) 
 
 
+@app.route('/search_library', methods=['POST'])
+def search_library():
+    title=mongo.db.title.find(),
+    author=mongo.db.author.find(),
+    genre=mongo.db.genre.find(),
+    return render_template(url_for('/get_library'))
+
+
 @app.route('/home')
 def home():
     return render_template('home.html')
@@ -32,11 +40,6 @@ def home():
 @app.route('/mylibrary')
 def mylibrary():
     return render_template('mylibrary.html', reader=mongo.db.reader.find())
-
-
-@app.route('/add_detail_page')
-def add_detail_page():
-    return render_template('adddetail.html')
 
 
 @app.route('/contact_page')
@@ -52,13 +55,6 @@ def about_page():
 @app.route('/enquiry_return')
 def enquiry_return():
     return render_template('enquiryreturn.html')
-
-
-@app.route('/add_detail', methods=['POST'])
-def add_detail():
-    title = mongo.db.title
-    title.insert_one(request.form.to_dict())
-    return redirect(url_for('get_library'))
 
 
 @app.route('/read_book/<reader_id>', methods=['POST'])
@@ -105,9 +101,10 @@ def submit_book():
 
 @app.route('/add_to_mylibrary/<book_id>', methods=['POST'])
 def add_to_mylibrary(book_id):
-    my_book = mongo.db.book.find({"_id": ObjectId(book_id)})
-    mongo.db.reader.insert_one(my_book)
-    return render_template('mylibrary.html')
+    user = mongo.db.reader
+    my_book = mongo.db.book.find_one({"_id": ObjectId(book_id)})
+    user.insert_one(my_book)
+    return redirect(url_for('mylibrary'))
 
 
 @app.route('/edit_book/<book_id>')
