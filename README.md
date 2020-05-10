@@ -69,6 +69,7 @@ library_image_5 - https://www.pixelstalk.net/free-download-library-wallpapers/
 library_image_6 - https://www.pixelstalk.net/free-download-library-wallpapers/
 library_image_7 - https://www.pixelstalk.net/free-download-library-wallpapers/
 library_illustration_1 - https://www.pixelstalk.net/free-download-library-wallpapers/
+library_image_8 - https://www.citizenatelier.com/the-library-of-knowledge-tchekoslovakia
 
 
 

@@ -31,18 +31,9 @@
 				<div class="col s3 task_header">
 					<div class="switch right-align">
 						<label>
-        <input href="{{url_for('read_book', reader_id=reader._id)}}" type="checkbox"/>
-        <span>Read?</span>
-      </label>
-
-      {% if task.is_urgent %}
-                    <input id="is_urgent" name="is_urgent" type="checkbox" checked>
-                    {% else %}
-                    <input id="is_urgent" name="is_urgent" type="checkbox">
-                    {% endif %}
-                    <span class="lever"></span>
-                    Is urgent
-					
+                            <input href="{{url_for('read_book', reader_id=reader._id)}}" type="checkbox"/>
+                            <span>Read?</span>
+                        </label>
 					</div>
 				</div>
 			</div>

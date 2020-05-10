@@ -2,14 +2,14 @@ html {
     font-family: 'Libre Baskerville', serif;
 }
 /*------------------------------------------------------------------------------BACKGROUND*/
-
-
-
-
+.slider-border {
+    border: 5px;
+    color: teal;
+}
 
 
 .background-image {
-    height: 75vh;
+    height: auto;
     background: url('../images/library_image_7.jpg') no-repeat center top fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -19,7 +19,7 @@ html {
     align-items: center;
     justify-content: center;
     position: relative;
-}*/
+}
 
 .btn_small {
     height: 40px;
@@ -47,6 +47,14 @@ body {
     flex: 1 0 auto;
   }
 
+ .heading-box {
+    background-color: rgba(128, 128, 128, 0.8);
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
   .text-box {
     background-color: rgba(128, 128, 128, 0.8);
     border-radius: 10px;
@@ -55,3 +63,33 @@ body {
 .page-heading {
     font-size: 40px;
 }
+
+/*------------------------------------------------------------------------------ABOUT*/
+
+.about-text {
+    font-size: 20px;
+}
+
+.container {
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+
+
+
+
+#book-box {
+    border: 0;
+}
+
+textarea {
+    height: 8rem !important;
+}
+
+
+
+ 
+/*

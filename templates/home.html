@@ -1,44 +1,42 @@
 {% extends 'index.html' %}
 {% block content %}
-<div class="container">
-	<div class="row">
-		<div class="text-box white-text center-align col s12">
-			<h5 class="page=heading">This should be vertically aligned</h5>
+	<div class="container">
+		<div class="row" style="margin: 0px;">
+			<div class="col s12 slider" style="padding: 0;">
+				<ul class="slides slider-border">
+					<li>
+						<img src="../static/images/library_image_1.jpeg" title="Library 1" alt="Classic library">
+						<div class="caption left-align">
+							<h3>The Book Club.</h3>
+							<h5 class="white-text">Your online library.</h5>
+						</div>
+					</li>
+					<li>
+						<img src="../static/images/library_image_2.jpeg">
+						<div class="caption center-align">
+							<h3>Add books to our extensive library.</h3>
+							<h5 class="white-text">And search for new titles.</h5>
+						</div>
+					</li>
+					<li>
+						<img src="../static/images/library_image_6.jpeg">
+						<div class="caption right-align">
+							<h3>Create your own collection.</h3>
+							<h5 class="white-text">Want to make a 'To read' list? Then do it.</h5>
+						</div>
+					</li>
+					<li>
+						<img src="../static/images/library_image_8.jpeg">
+						<div class="caption center-align">
+							<h3>Purchase books.</h3>
+							<h5 class="white-text">Found a book you want? Purchase it from an
+								affiliated
+								store.</h5>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="container">
-	<div class="slider">
-		<ul class="slides">
-			<li>
-				<img src="../static/images/library_image_1.png" title="Library 1" alt="Classic library">
-				<div class="caption center-align">
-					<h3>The Book Club</h3>
-					<h5 class="light grey-text text-lighten-3">Your online library.</h5>
-				</div>
-			</li>
-			<li>
-				<img src="../static/images/library_image_2.jpg">
-				<div class="caption left-align">
-					<h3>Add books to our extensive library.</h3>
-					<h5 class="light grey-text text-lighten-3">And search for new titles.</h5>
-				</div>
-			</li>
-			<li>
-				<img src="../static/images/library_image_4.jpg">
-				<div class="caption center-align">
-					<h3>Create your own collection.</h3>
-					<h5 class="light grey-text text-lighten-3">Want to make a 'To read' list? Then do it.</h5>
-				</div>
-			</li>
-            <li>
-				<img src="../static/images/library_image_4.jpg">
-				<div class="caption center-align">
-					<h3>Purchase books.</h3>
-					<h5 class="light grey-text text-lighten-3">Found a book you want? Purchase it from an affiliated store.</h5>
-				</div>
-			</li>
-		</ul>
-	</div>
-</div>
+
 {% endblock %}

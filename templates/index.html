@@ -7,82 +7,116 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+		type="text/css" />
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+		rel="stylesheet">
 
 
 </head>
 
-<div class="navbar-fixed">
-	<nav class="teal darken-4">
-		<div id="nav-wrapper" class="nav-wrapper">
-			<a href="{{ url_for('home') }}" class="brand-logo" style="margin: 0px 20px;">The Book Club</a>
-			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i>
-				<ul class="right hide-on-medium-and-down" style="margin: 0px 20px;">
-					<li><a href="{{ url_for('get_library') }}"><i class="material-icons">collections_bookmark</i></a>
 
-					</li>
-					<li><a href="{{ url_for('add_book') }}"><i class="material-icons">library_add</i></a>
-
-					</li>
-					<li><a href="{{ url_for('my_library') }}"><i class="material-icons">local_library</i></a>
-					</li>
-				</ul>
-			</a>
+<nav class="navber-fixed">
+	<div id="nav-wrapper" class="nav-wrapper teal darken-4">
+		<a href="{{ url_for('home') }}" class="brand-logo" style="margin: 0px 20px;">The Book Club</a>
+		<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+		<ul class="right hide-on-med-and-down" style="margin: 0px 20px;">
+			<li><a href="{{ url_for('get_library') }}"><i class="material-icons">collections_bookmark</i></a>
+			</li>
+			<li><a href="{{ url_for('add_book') }}"><i class="material-icons">library_add</i></a>
+			</li>
+			<li><a href="{{ url_for('my_library') }}"><i class="material-icons">local_library</i></a>
+			</li>
+		</ul>
+	</div>
+</nav>
+<ul class="sidenav teal darken-4" id="mobile-demo">
+	<li><a class="white-text" href="{{ url_for('get_library') }}">Library</a></li>
+	<li><a class="white-text" href="{{ url_for('add_book') }}">Add a book</a></li>
+	<li><a class="white-text" href="{{ url_for('my_library') }}">My library</a></li>
+	<li><a class="white-text" href="{{ url_for('about_page') }}">About</a></li>
+	<li><a class="white-text" href="{{ url_for('contact_page') }}">Contact us</a></li>
+	<li>
+		<div class="row">
+			<div class="col s3 social-icon center-align">
+				<a target="_blank" href="https://www.facebook.com/waterstones">
+					<i class="fab fa-facebook-square fa-2x" style="color: white;" aria-hidden="true"></i>
+					<span class="sr-only">Facebook</span>
+				</a>
+			</div>
+			<div class="col s3 social-icon center-align">
+				<a target="_blank" href="https://twitter.com/waterstones">
+					<i class="fab fa-twitter-square fa-2x" style="color: white;" aria-hidden="true"></i>
+					<span class="sr-only">Twitter</span>
+				</a>
+			</div>
+			<div class="col s3 social-icon center-align">
+				<a target="_blank" href="https://www.instagram.com/waterstones/">
+					<i class="fab fa-instagram-square fa-2x" style="color: white;" aria-hidden="true"></i>
+					<span class="sr-only">Instagram</span>
+				</a>
+			</div>
+			<div class="col s3 social-icon center-align">
+				<a target="_blank" href="https://www.pinterest.co.uk/waterstones/">
+					<i class="fab fa-pinterest-square fa-2x" style="color: white;" aria-hidden="true"></i>
+					<span class="sr-only">Pinterest</span>
+				</a>
+			</div>
 		</div>
-	</nav>
-</div>
+</ul>
 
 
 <main class="background-image">
-	<div class="text-detail container">
 		{% block content %}
 		{% endblock %}
-	</div>
 </main>
 
 
-<footer class="page-footer teal darken-4">
-	<div class="row">
-		<div class="col l8 s8">
-			<a href="{{ url_for('home') }}" class="white-text valign-wrapper">The Book Club</a>
+<footer class="page-footer teal darken-4 hide-on-med-and-down" style="padding: 20px;">
+	<div class="row valign-wrapper show-on-medium-and-down" style="margin: 0px;">
+		<div class="col s12 center-align">
+			<a href="{{ url_for('home') }}" class="white-text">The Book Club</a>
 		</div>
-		<div class="col l2 s2">
-			<ul class="list-inline social-links">
-				<li class="list-inline-item">
-					<a target="_blank" href="https://www.facebook.com/waterstones">
-						<i class="fab fa-facebook-square" aria-hidden="true"></i>
-						<span class="sr-only">Facebook</span>
-					</a>
-				</li>
-				<li class="list-inline-item">
-					<a target="_blank" href="https://twitter.com/waterstones">
-						<i class="fab fa-twitter-square" aria-hidden="true"></i>
-						<span class="sr-only">Twitter</span>
-					</a>
-				</li>
-				<li class="list-inline-item">
-					<a target="_blank" href="https://www.instagram.com/waterstones/">
-						<i class="fab fa-instagram-square" aria-hidden="true"></i>
-						<span class="sr-only">Instagram</span>
-					</a>
-				</li>
-				<li class="list-inline-item">
-					<a target="_blank" href="https://www.pinterest.co.uk/waterstones/">
-						<i class="fab fa-pinterest-square" aria-hidden="true"></i>
-						<span class="sr-only">Pinterest</span>
-					</a>
-				</li>
-			</ul>
-
-		</div>
-		<div class="col l1 s1">
+		<div class="col s12 center-align">
 			<a href="{{ url_for('about_page') }}" class="white-text">About</a>
 		</div>
-		<div class="col l1 s1">
+		<div class="col s12 center-align">
 			<a href="{{ url_for('contact_page') }}" class="white-text">Contact</a>
 		</div>
-	</div>
+		<div class="col s12 center-align">
+			<div class="col s1"></div>
+			<div class="col s1"></div>
+			<div class="col s1"></div>
+			<div class="col s1"></div>
+			<div class="col s1 social-icon" style="margin: 5px;">
+				<a target="_blank" href="https://www.facebook.com/waterstones">
+					<i class="fab fa-facebook-square fa-2x" style="color: white;" aria-hidden="true"></i>
+					<span class="sr-only">Facebook</span>
+				</a>
+			</div>
+			<div class="col s1 social-icon" style="margin: 5px;">
+				<a target="_blank" href="https://twitter.com/waterstones">
+					<i class="fab fa-twitter-square fa-2x" style="color: white;" aria-hidden="true"></i>
+					<span class="sr-only">Twitter</span>
+				</a>
+			</div>
+			<div class="col s1 social-icon" style="margin: 5px;">
+				<a target="_blank" href="https://www.instagram.com/waterstones/">
+					<i class="fab fa-instagram-square fa-2x" style="color: white;" aria-hidden="true"></i>
+					<span class="sr-only">Instagram</span>
+				</a>
+			</div>
+			<div class="col s1 social-icon" style="margin: 5px;">
+				<a target="_blank" href="https://www.pinterest.co.uk/waterstones/">
+					<i class="fab fa-pinterest-square fa-2x" style="color: white;" aria-hidden="true"></i>
+					<span class="sr-only">Pinterest</span>
+				</a>
+			</div>
+			<div class="col s1"></div>
+			<div class="col s1"></div>
+			<div class="col s1"></div>
+			<div class="col s1"></div>
+		</div>
 </footer>
 
 
@@ -92,7 +126,16 @@
 	$(document).ready(function() {
 	        $('.collapsible').collapsible();
             $('.dropdown-trigger').dropdown();
-            $('.slider').slider();
+            $('.slider').slider({
+                height: 700,
+                duration: 300
+            });
+            $('.sidenav').sidenav({
+                draggable: false,
+                inDuration: 200,
+                outDuration: 100,
+                preventScrolling: false
+            });
             $('.modal').modal();
             $('select').formSelect();
             $('.datepicker').datepicker({
@@ -134,10 +177,6 @@
                     },
                     limit: 5,
             });
-            $('.sidenav').sidenav();
-            });
-            
-  
         });
 </script>
 
