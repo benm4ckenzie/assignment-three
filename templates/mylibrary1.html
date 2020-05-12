@@ -1,0 +1,56 @@
+{% extends 'index.html' %}
+{% block content %}
+<h3>My Library</h3>
+
+<div class="row">
+	<ul class="collapsible">
+		{% for reader in reader %}
+		<li>
+			<div class="row collapsible-header" style="margin: 0px;">
+				<div class="col s9">
+					<i class="material-icons valign-wrapper">expand_more</i>
+					{{reader.author_name}} - <strong>{{reader.book_title}}</strong>
+				</div>
+				<div class="col s3 task_header">
+					<div class="switch right-align">
+						<label>
+                            <input href="{{url_for('read_book', reader_id=reader._id)}}" type="checkbox"/>
+                            <span>Read?</span>
+                        </label>
+					</div>
+				</div>
+			</div>
+			<div class="row collapsible-body" style="margin: 0px;">
+				<div class="col s9">
+					<span>
+                <strong>Genre:</strong> {{reader.genre_name}}
+			    </span>
+					<br>
+					<span>
+                <strong>Publisher:</strong> {{reader.publisher_name}}
+                </span>
+					<br>
+					<span>
+                <strong>Release date:</strong> {{reader.release_date}}
+                </span>
+					<br>
+					<span>
+                <strong>Book length:</strong> {{reader.book_length}}
+                </span>
+					<br>
+					<span>
+                <strong>ISBN 13: </strong>{{reader.isbn_13}}
+                </span>
+				</div>
+				<div class="col s3 right-align">
+					<a href="{{url_for('delete_book', reader_id=reader._id)}}"
+						class="waves-effect waves-light btn btn_small teal darken-4 col s12">Delete book from
+						library</a>
+				</div>
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+</div>
+
+{% endblock %}

@@ -24,14 +24,6 @@ def my_library():
     return render_template('mylibrary.html', reader=mongo.db.reader.find()) 
 
 
-@app.route('/search_library', methods=['POST'])
-def search_library():
-    title=mongo.db.title.find(),
-    author=mongo.db.author.find(),
-    genre=mongo.db.genre.find(),
-    return render_template(url_for('/get_library'))
-
-
 @app.route('/home')
 def home():
     return render_template('home.html')
@@ -50,11 +42,6 @@ def contact_page():
 @app.route('/about_page')
 def about_page():
     return render_template('about.html')
-
-
-@app.route('/enquiry_return')
-def enquiry_return():
-    return render_template('enquiryreturn.html')
 
 
 @app.route('/read_book/<reader_id>', methods=['POST'])
@@ -124,7 +111,9 @@ def update_book(book_id):
         'publisher_name': request.form.get('publisher_name'),
         'release_date':request.form.get('release_date'),
         'book_length':request.form.get('book_length'),
-        'isbn_13':request.form.get('isbn_13')  
+        'isbn_13':request.form.get('isbn_13'),
+        'book_image':request.form.get('book_image'),
+        'book_url':request.form.get('book_url')   
     })
     return redirect(url_for('get_library'))
 

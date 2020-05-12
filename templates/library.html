@@ -1,59 +1,67 @@
 {% extends 'index.html' %}
 {% block content %}
-	<div class="container">
-		<h4 class="center-align heading-box white-text">Library</h4>
-		<div class="row">
-			<form class="col s12">
-				<ul id="book-box" class="collapsible">
-					{% for book in book %}
-					<li style="margin-bottom: 2px;">
-						<div id="book-box" class="row collapsible-header text-box" style="margin: 0px;">
-							<div class="white-text col s9 valign-wrapper">
-								<i class="material-icons">expand_more</i>
-								{{book.author_name}} - <strong>{{book.book_title}}</strong>
-							</div>
-							<div class="col s3 task_header">
-								<div class="switch right-align">
-									<a href="{{ url_for('add_to_mylibrary', book_id=book._id) }}" method="POST"
-										class="btn waves-effect waves-light btn-med teal darken-4" type="submit"
-										name="reader_library">My Library
-									<i class="material-icons white-text">add</i></a>
-                                    
-								</div>
+<div class="container">
+	<h4 class="center-align heading-box white-text">Library</h4>
+	<div class="row">
+		<form class="col s12">
+			<ul id="book-box" class="collapsible" style="margin: 0px;">
+				{% for book in book %}
+				<li style="margin-bottom: 2px;">
+					<div id="book-box" class="row collapsible-header text-box" style="margin: 0px;">
+						<div class="white-text col s9 valign-wrapper">
+							<i class="material-icons">expand_more</i>
+							{{book.author_name}} - <strong>{{book.book_title}}</strong>
+						</div>
+						<div class="col s3 right-align" style="margin: 0px;">
+							<div class="switch right-align">
+								<a href="{{ url_for('add_to_mylibrary', book_id=book._id) }}" method="POST"
+									class="btn waves-effect waves-light btn-med teal darken-4 valign-wrapper"
+									type="submit" name="reader_library right-align">Add to My
+									Library
+								</a>
+
 							</div>
 						</div>
-						<div id="book-box" class="row collapsible-body text-box white-text" style="margin: 0px;">
-							<div class="col s6">
-								<span>
+					</div>
+					<div id="book-box" class="row collapsible-body text-box white-text" style="margin: 0px;">
+						<div class="col s6">
+							<span>
                             <strong>Genre:</strong> {{book.genre_name}}
 			            </span>
-								<br>
-								<span>
+							<br>
+							<span>
                             <strong>Publisher:</strong> {{book.publisher_name}}
                         </span>
-								<br>
-								<span>
+							<br>
+							<span>
                             <strong>Release date:</strong> {{book.release_date}}
                         </span>
-								<br>
-								<span>
+							<br>
+							<span>
                             <strong>Book length:</strong> {{book.book_length}}
                         </span>
-								<br>
-								<span>
+							<br>
+							<span>
                             <strong>ISBN 13: </strong>{{book.isbn_13}}
                         </span>
-							</div>
-                            <div class="col s6 l3 center-align"></div>
-							<div class="col s12 l3 right-align" style="margin-top: 5px;">
-								<a href="{{ url_for('edit_book', book_id=book._id)}}"
-									class="waves-effect waves-light btn btn_med teal darken-4 col s12">Update book<i class="material-icons right">publish</i></a>
+						</div>
+						<div class="col s6 l3 right-align">
+							<div class="right-align">
+								<a target="_blank" href="{{book.book_url}}"><img src="{{book.book_image}}"></a>
 							</div>
 						</div>
-					</li>
-					{% endfor %}
-				</ul>
-			</form>
-		</div>
+						<div class="col s12 l3 right-align" style="margin-top: 5px;">
+							<div class="switch right-align">
+								<a href="{{ url_for('edit_book', book_id=book._id)}}"
+									class="waves-effect waves-light btn btn_med teal darken-4 col s12 right-align">Update
+									book</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+		</form>
 	</div>
+</div>
 {% endblock %}
