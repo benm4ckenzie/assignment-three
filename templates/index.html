@@ -36,39 +36,20 @@
 	<li><a class="white-text" href="{{ url_for('my_library') }}">My library</a></li>
 	<li><a class="white-text" href="{{ url_for('about_page') }}">About</a></li>
 	<li><a class="white-text" href="{{ url_for('contact_page') }}">Contact us</a></li>
-	<li>
-		<div class="row">
-			<div class="col s3 social-icon center-align">
-				<a target="_blank" href="https://www.facebook.com/waterstones">
-					<i class="fab fa-facebook-square fa-2x" style="color: white;" aria-hidden="true"></i>
-					<span class="sr-only">Facebook</span>
-				</a>
-			</div>
-			<div class="col s3 social-icon center-align">
-				<a target="_blank" href="https://twitter.com/waterstones">
-					<i class="fab fa-twitter-square fa-2x" style="color: white;" aria-hidden="true"></i>
-					<span class="sr-only">Twitter</span>
-				</a>
-			</div>
-			<div class="col s3 social-icon center-align">
-				<a target="_blank" href="https://www.instagram.com/waterstones/">
-					<i class="fab fa-instagram-square fa-2x" style="color: white;" aria-hidden="true"></i>
-					<span class="sr-only">Instagram</span>
-				</a>
-			</div>
-			<div class="col s3 social-icon center-align">
-				<a target="_blank" href="https://www.pinterest.co.uk/waterstones/">
-					<i class="fab fa-pinterest-square fa-2x" style="color: white;" aria-hidden="true"></i>
-					<span class="sr-only">Pinterest</span>
-				</a>
-			</div>
-		</div>
+	<li><a class="dropdown-trigger white-text" href="#!"
+			data-target="dropdown1">Social media<i class="material-icons right white-text">arrow_drop_down</i></a></li>
 </ul>
 
+<ul id="dropdown1" class="dropdown-content teal darken-4">
+			<li><a target="_blank" href="https://www.facebook.com/waterstones/" class="white-text">Facebook</a></li>
+			<li><a target="_blank" href="https://www.instagram.com/waterstones/" class="white-text">Instagram</a></li>
+			<li><a target="_blank" href="https://www.pinterest.co.uk/waterstones/" class="white-text">Pinterest</a></li>
+			<li><a target="_blank" href="https://twitter.com/waterstones/" class="white-text">Twitter</a></li>
+		</ul>
 
 <main class="background-image">
-		{% block content %}
-		{% endblock %}
+	{% block content %}
+	{% endblock %}
 </main>
 
 
@@ -127,8 +108,7 @@
 	        $('.collapsible').collapsible();
             $('.dropdown-trigger').dropdown();
             $('.slider').slider({
-                height: 700,
-                duration: 300
+                duration: 500
             });
             $('.sidenav').sidenav({
                 draggable: false,
@@ -178,6 +158,7 @@
                     limit: 5,
             });
         });
+
 </script>
 
 

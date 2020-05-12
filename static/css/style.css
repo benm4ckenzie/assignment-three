@@ -2,10 +2,6 @@ html {
     font-family: 'Libre Baskerville', serif;
 }
 /*------------------------------------------------------------------------------BACKGROUND*/
-.slider-border {
-    border: 5px;
-    color: teal;
-}
 
 
 .background-image {
@@ -43,11 +39,11 @@ body {
     flex-direction: column;
   }
 
-  main {
+main {
     flex: 1 0 auto;
   }
 
- .heading-box {
+.heading-box {
     background-color: rgba(128, 128, 128, 0.8);
     border-radius: 10px;
     padding: 10px;
@@ -55,13 +51,16 @@ body {
     margin-right: 100px;
 }
 
-  .text-box {
+.text-box {
     background-color: rgba(128, 128, 128, 0.8);
     border-radius: 10px;
 }
 
-.page-heading {
-    font-size: 40px;
+h4 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 75px;
+    margin-right: 75px;
 }
 
 /*------------------------------------------------------------------------------ABOUT*/
@@ -90,6 +89,3 @@ textarea {
 }
 
 
-
- 
-/*
