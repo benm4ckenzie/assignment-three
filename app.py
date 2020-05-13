@@ -86,10 +86,11 @@ def submit_book():
     return redirect(url_for('get_library'))
 
 
-@app.route('/add_to_mylibrary/<book_id>', methods=['POST'])
+@app.route('/add_to_mylibrary/<book_id>', methods=['GET'])
 def add_to_mylibrary(book_id):
     user = mongo.db.reader
     my_book = mongo.db.book.find_one({"_id": ObjectId(book_id)})
+    del my_book["_id"]
     user.insert_one(my_book)
     return redirect(url_for('mylibrary'))
 

@@ -87,5 +87,39 @@ h4 {
 textarea {
     height: 8rem !important;
 }
+#book_picbook_image {
+    width: 95%;
+}
+
+#book_picbook_image img {
+    width: 100%;
+}
 
 
+.datepicker-date-display {
+    background-color: #004d40;
+}
+
+.datepicker-day-button:focus {
+    color: white !important;
+    background-color: #004d40;
+}
+
+.datepicker-done,
+.datepicker-cancel,
+.select-dropdown li>span,
+.is-today {
+    color: #004d40 !important
+}
+
+td.is-selected,
+.month-prev:active,
+.month-prev:focus,
+.month-next:active,
+.month-next:focus {
+    background-color: #004d40 !important
+}
+
+td.is-selected.is-today {
+    color: black !important
+}

@@ -16,45 +16,52 @@
 							<div class="switch right-align">
 								<a href="{{ url_for('add_to_mylibrary', book_id=book._id) }}" method="POST"
 									class="btn waves-effect waves-light btn-med teal darken-4 valign-wrapper"
-									type="submit" name="reader_library right-align">Add to My
-									Library
+									type="submit"
+									name="reader_library right-align"><i class="material-icons prefix center">local_library add</i>
 								</a>
-
 							</div>
 						</div>
 					</div>
+
 					<div id="book-box" class="row collapsible-body text-box white-text" style="margin: 0px;">
-						<div class="col s6">
-							<span>
-                            <strong>Genre:</strong> {{book.genre_name}}
-			            </span>
-							<br>
-							<span>
-                            <strong>Publisher:</strong> {{book.publisher_name}}
-                        </span>
-							<br>
-							<span>
-                            <strong>Release date:</strong> {{book.release_date}}
-                        </span>
-							<br>
-							<span>
-                            <strong>Book length:</strong> {{book.book_length}}
-                        </span>
-							<br>
-							<span>
-                            <strong>ISBN 13: </strong>{{book.isbn_13}}
-                        </span>
-						</div>
-						<div class="col s6 l3 right-align">
-							<div class="right-align">
-								<a target="_blank" href="{{book.book_url}}"><img src="{{book.book_image}}"></a>
-							</div>
-						</div>
-						<div class="col s12 l3 right-align" style="margin-top: 5px;">
-							<div class="switch right-align">
-								<a href="{{ url_for('edit_book', book_id=book._id)}}"
-									class="waves-effect waves-light btn btn_med teal darken-4 col s12 right-align">Update
-									book</a>
+						<div class="col s12">
+							<div class="row" style="margin: 0px;">
+								<div id="book_pic"class="col s12 l6 center-align">
+									<a id="book_image"target="_blank" href="{{book.book_url}}"><img src="{{book.book_image}}"></a>
+								</div>
+
+								<div class="col s12 l6">
+									<div class="row" style="height: 90%;">
+										<div class="col s12 l4 offset-l4" style="margin: 0px;">
+											<span>
+                                            <strong>Genre:</strong> {{book.genre_name}}
+			                                </span>
+											<br>
+											<span>
+                                            <strong>Publisher:</strong> {{book.publisher_name}}
+                                            </span>
+											<br>
+											<span>
+                                            <strong>Release date:</strong> {{book.release_date}}
+                                            </span>
+											<br>
+											<span>
+                                            <strong>Book length:</strong> {{book.book_length}}
+                                            </span>
+											<br>
+											<span>
+                                            <strong>ISBN 13: </strong>{{book.isbn_13}}
+                                            </span>
+										</div>
+									</div>
+									<div class="row" style="margin: 0px;">
+										<div class="col s12 l4 offset-l4">
+											<a href="{{ url_for('edit_book', book_id=book._id)}}"
+												class="waves-effect waves-light btn btn_med teal darken-4 right-align">Update
+												book</a>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
