@@ -10,12 +10,12 @@
 					<div id="book-box" class="row collapsible-header text-box" style="margin: 0px;">
 						<div class="white-text col s9 valign-wrapper">
 							<i class="material-icons">expand_more</i>
-							{{reader.author_name}} - <strong>{{reader.book_title}}</strong>
+							<p style="margin: 0px;">{{reader.book_title}} - {{reader.author_name}}</p>
 						</div>
 						<div class="col s3 right-align" style="margin: 0px;">
 							<div class="switch right-align">
 						<label>
-                            <input href="{{url_for('read_book', reader_id=reader._id)}}" type="checkbox"/>
+                            <input id="read_book" name="read_book" href="{{url_for('read_book', reader_id=reader._id)}}" type="checkbox"/>
                             <span>Read?</span>
                         </label>
 					</div>

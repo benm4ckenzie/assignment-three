@@ -15,13 +15,13 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_library')
 def get_library():
-    return render_template('library.html', book=mongo.db.book.find())
+    return render_template('library.html', book=mongo.db.book.find().sort("book_title"))
 
 
 
 @app.route('/my_library')
 def my_library():
-    return render_template('mylibrary.html', reader=mongo.db.reader.find()) 
+    return render_template('mylibrary.html', reader=mongo.db.reader.find().sort("book_title")) 
 
 
 @app.route('/home')
@@ -47,10 +47,7 @@ def about_page():
 @app.route('/read_book/<reader_id>', methods=['POST'])
 def read_book(reader_id):
     reader = mongo.db.reader
-    reader.update( {'_id': ObjectId(reader_id)},
-    {
-        'read_book':request.form.get('read_book')  
-    })
+    reader.insert_one(request.form.to_dict())
     return redirect(url_for('mylibrary'))
 
 

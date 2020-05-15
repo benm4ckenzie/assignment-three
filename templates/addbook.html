@@ -2,72 +2,69 @@
 {% block content %}
 <div class="container">
 	<h4 class="center-align heading-box white-text">Add book</h4>
-	<div class="row">
-	<form action="{{ url_for('submit_book') }}" method="POST" class="text-box col s12">
-		<div class="row" style="margin: 0px;">
+	<div class="row" style="margin: 0px;">
+		<form action="{{ url_for('submit_book') }}" method="POST" class="text-box col s12">
+			<div class="row" style="margin: 0px;">
+				<div class="input-field col s12">
+					<i class="material-icons prefix white-text">menu_book</i>
+					<input id="book_title" name="book_title" type="text" class="autocomplete_title white-text" style="margin-bottom: 0px;" required>
+					<label for="autocomplete-input white-text" style="margin-top: 5px; 5px; color: white;">Book title</label>
+				</div>
 
-			<div class="input-field col s12">
-				<i class="material-icons prefix white-text">menu_book</i>
-				<input id="book_title" name="book_title" type="text" class="autocomplete_title white-text" style="margin-bottom: 0px;">
-				<label for="autocomplete-input white-text" style="margin-top: 5px; 5px; color: white;">Book title</label>
-			</div>
-
-			<div class="input-field col s12">
-				<i class="material-icons prefix white-text">person</i>
-				<input id="author_name" name="author_name" type="text" class="autocomplete_author white-text" style="margin-bottom: 0px;">
-				<label for="autocomplete-input white-text" style="margin-top: 5px; 5px; color: white;">Author name 
+				<div class="input-field col s12">
+					<i class="material-icons prefix white-text">person</i>
+					<input id="author_name" name="author_name" type="text" class="autocomplete_author white-text" style="margin-bottom: 0px;" required>
+					<label for="autocomplete-input white-text" style="margin-top: 5px; 5px; color: white;">Author name 
                 </label>
-			</div>
+				</div>
 
-			<div class="white-text input-field col s12">
-				<i class="material-icons prefix white-text">folder</i>
-				<input id="genre_name" name="genre_name" type="text" class="autocomplete_genre white-text" style="margin-bottom: 0px;">
-				<label for="autocomplete-input white-text" style="margin-top: 5px; 5px; color: white;">Genre</label>
-			</div>
-			<div class="white-text input-field col s12 l6">
-				<i class="material-icons prefix white-text">print</i>
-				<input id="publisher_name" name="publisher_name" type="text" class="autocomplete_publisher white-text" style="margin-bottom: 0px;">
-				<label for="autocomplete-input white-text" style="margin-top: 5px; 5px; color: white;">
+				<div class="input-field col s12">
+					<i class="material-icons prefix white-text">folder</i>
+					<input id="genre_name" name="genre_name" type="text" class="autocomplete_genre white-text" style="margin-bottom: 0px;">
+					<label for="autocomplete-input white-text" style="margin-top: 5px; 5px; color: white;">Genre</label>
+				</div>
+				<div class="input-field col s12 l6">
+					<i class="material-icons prefix white-text">print</i>
+					<input id="publisher_name" name="publisher_name" type="text" class="autocomplete_publisher white-text" style="margin-bottom: 0px;">
+					<label for="autocomplete-input white-text" style="margin-top: 5px; 5px; color: white;">
                 Publisher name
                 </label>
-			</div>
-			<div class="white-text input-field col s12 l6">
-				<i class="material-icons prefix white-text">square_foot</i>
-				<input id="book_length" name="book_length" type="text" class="autocomplete white-text" style="margin-bottom: 0px;">
-				<label for="autocomplete-input white-text" style="margin-top: 5px; 5px; color: white;">Book length</label>
-			</div>
-			<div id="matfix" class="white-text input-field col s12 l6">
-				<i class="material-icons prefix white-text">today</i>
-				<input id="release_date" name="release_date" type="text" class="datepicker white-text" style="margin-bottom: 0px;">
-				<label for="autocomplete-input white-text" style="margin-top: 5px; 5px; color: white;">Release date</label>
-			</div>
-			<div class="white-text input-field col s12 l6">
-				<i class="material-icons prefix white-text">code</i>
-				<input id="isbn_13" name="isbn_13" type="text" class="autocomplete white-text" style="margin-bottom: 0px;">
-				<label for="autocomplete-input white-text" style="margin-top: 5px; 5px; color: white;">ISBN 13</label>
-			</div>
-            <div class="white-text input-field col s12 l6">
-				<i class="material-icons prefix white-text">insert_photo</i>
-				<input id="book_picture" name="book_picture" type="text" class="autocomplete white-text" style="margin-bottom: 0px;">
-				<label for="autocomplete-input white-text" style="margin-top: 5px; 5px; color: white;">Book image URL</label>
-			</div>
-			<div class="white-text input-field col s12 l6">
-				<i class="material-icons prefix white-text">shopping_cart</i>
-				<input id="buy_book" name="buy_book" type="text" class="autocomplete white-text" style="margin-bottom: 0px;">
-				<label for="autocomplete-input white-text" style="margin-top: 5px; 5px; color: white;">Book purchase URL</label>
-			</div>
-			<div class="row" style="margin: 0px;">
-				<div class="center-align input-field col s12">
-					<button class="btn waves-effect waves-light btn_med teal darken-4" type="submit" name="action">
+				</div>
+				<div class="input-field col s12 l6">
+					<i class="material-icons prefix white-text">square_foot</i>
+					<input id="book_length" name="book_length" type="text" class="autocomplete white-text" style="margin-bottom: 0px;">
+					<label for="autocomplete-input white-text" style="margin-top: 5px; 5px; color: white;">Book length</label>
+				</div>
+				<div id="matfix" class="input-field col s12 l6">
+					<i class="material-icons prefix white-text">today</i>
+					<input id="release_date" name="release_date" type="text" class="datepicker white-text" style="margin-bottom: 0px;">
+					<label for="autocomplete-input white-text" style="margin-top: 5px; 5px; color: white;">Release date</label>
+				</div>
+				<div class="input-field col s12 l6">
+					<i class="material-icons prefix white-text">code</i>
+					<input id="isbn_13" name="isbn_13" type="text" class="autocomplete white-text" style="margin-bottom: 0px;">
+					<label for="autocomplete-input white-text" style="margin-top: 5px; 5px; color: white;">ISBN 13</label>
+				</div>
+				<div class="input-field col s12 l6">
+					<i class="material-icons prefix white-text">insert_photo</i>
+					<input id="book_picture" name="book_picture" type="text" class="autocomplete white-text" style="margin-bottom: 0px;">
+					<label for="autocomplete-input white-text" style="margin-top: 5px; 5px; color: white;">Book image URL</label>
+				</div>
+				<div class="input-field col s12 l6">
+					<i class="material-icons prefix white-text">shopping_cart</i>
+					<input id="buy_book" name="buy_book" type="text" class="autocomplete white-text" style="margin-bottom: 0px;">
+					<label for="autocomplete-input white-text" style="margin-top: 5px; 5px; color: white;">Book purchase URL</label>
+				</div>
+				<div class="row" style="margin: 0px;">
+					<div class="center-align input-field col s12">
+						<button class="btn waves-effect waves-light btn_med teal darken-4" type="submit" name="action">
                     Submit book<i class="material-icons right">playlist_add</i>
                     </button>
+					</div>
 				</div>
 			</div>
-		</div>
-	</form>
-</div>
+		</form>
+	</div> 
 </div>
 
 {% endblock %}
-
-
