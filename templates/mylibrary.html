@@ -4,24 +4,46 @@
 	<h4 class="center-align heading-box white-text">My library</h4>
 	<div class="row">
 		<form class="col s12">
-			<ul id="book-box" class="collapsible" style="margin: 0px;">
+			<ul id="mylibrary-header" class="collapsible" style="margin: 0px;">
 				{% for reader in reader %}
 				<li style="margin-bottom: 2px;">
-					<div id="book-box" class="row collapsible-header text-box" style="margin: 0px;">
+					<div id="book-header" class="row collapsible-header text-box" style="margin: 0px;">
 						<div class="white-text col s9 valign-wrapper">
 							<i class="material-icons">expand_more</i>
 							<p style="margin: 0px;">{{reader.book_title}} - {{reader.author_name}}</p>
 						</div>
 						<div class="col s3 right-align" style="margin: 0px;">
-							<div class="switch right-align">
-						<label>
-                            <input id="read_book" name="read_book" href="{{url_for('read_book', reader_id=reader._id)}}" type="checkbox"/>
-                            <span>Read?</span>
-                        </label>
-					</div>
+						        <div class="row">
+			<div class="switch">	
+<label>
+                    {% if reader.read_book %}
+                    <input id="read_book" name="read_book" type="checkbox" checked>
+                    {% else %}
+                    <input id="read_book" name="read_book" type="checkbox">
+                    {% endif %}
+                    <span class="lever"></span>
+                    Read?
+                </label>
+
+<div class="switch right-align">
+							<a href="{{url_for('read_book', reader_id=reader._id)}}"
+						class="waves-effect waves-light btn btn_med teal darken-4 col s12">Read</a>
+						</div>
+                        <div class="switch right-align">
+							<a href="{{url_for('to_read_book', reader_id=reader._id)}}"
+						class="waves-effect waves-light btn btn_med teal darken-4 col s12">To read</a>
+						</div>
+        
+				
+			</div>
+		</div>
+
+
+
+
 						</div>
 					</div>
-					<div id="book-box" class="row collapsible-body text-box white-text" style="margin: 0px;">
+					<div id="mylibrary-book-detail" class="row collapsible-body text-box white-text" style="margin: 0px;">
 						<div class="col s6">
 							<span>
                             <strong>Genre:</strong> {{reader.genre_name}}

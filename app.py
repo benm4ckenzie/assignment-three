@@ -49,10 +49,15 @@ def about_page():
     return render_template('about.html')
 
 
-@app.route('/read_book/<reader_id>', methods=['POST'])
+@app.route('/read_book/<reader_id>', methods=['GET'])
 def read_book(reader_id):
-    reader = mongo.db.reader
-    reader.insert_one(request.form.to_dict())
+    mongo.db.reader.update_one({"_id": ObjectId(reader_id)}, {"$set": {"read_book": True }})
+    return redirect(url_for('mylibrary'))
+
+
+@app.route('/to_read_book/<reader_id>', methods=['GET'])
+def to_read_book(reader_id):
+    mongo.db.reader.update_one({"_id": ObjectId(reader_id)}, {"$set": {"read_book": False }})
     return redirect(url_for('mylibrary'))
 
 
