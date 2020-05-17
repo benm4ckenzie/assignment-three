@@ -39,6 +39,11 @@ def contact_page():
     return render_template('contact.html')
 
 
+@app.route('/receipt')
+def receipt():
+    return render_template('receipt.html')
+
+
 @app.route('/about_page')
 def about_page():
     return render_template('about.html')
