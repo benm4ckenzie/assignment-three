@@ -135,11 +135,19 @@ td.is-selected.is-today {
     color: black !important
 }
 
-.dropdown-content li>a, .dropdown-content li>span {
-  color: #000!important;
+.dropdown-content li>a {
+  color: white!important;
+  background-color: #004d40!important;
+  border: 0;
 }
+
+.autocomplete-content li>span {
+    color:grey;
+    background-color: #004d40!important;
+}
+
 .autocomplete-content li .highlight {
-  color: red!important;
+  color: white!important;
 }
 
 
