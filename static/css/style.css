@@ -78,9 +78,19 @@ h4 {
 
 #book-detail-box {
     border: 0;
+    position: relative;
+}
+
+#my-book-detail-box {
+    border: 0;
+    position: relative;
 }
 
 #book-title-box {
+    border: 0;
+}
+
+#my-book-title-box {
     border: 0;
 }
 
@@ -131,6 +141,8 @@ td.is-selected.is-today {
 .autocomplete-content li .highlight {
   color: red!important;
 }
+
+
 
 
 	/*<div id="book-child" class="col s12" style="margin: 0px; padding: 0px;">

@@ -1,77 +1,77 @@
 {% extends 'index.html' %}
 {% block content %}
 <div class="container">
-	<h4 class="center-align heading-box white-text">My library</h4>
+	<h4 class="center-align heading-box white-text">My Library</h4>
 	<div class="row">
 		<form class="col s12">
-			<ul id="mylibrary-header" class="collapsible" style="margin: 0px;">
+			<ul id="my-book-box" class="collapsible" style="margin: 0px; border: 0px;">
 				{% for reader in reader %}
 				<li style="margin-bottom: 2px;">
-					<div id="book-header" class="row collapsible-header text-box" style="margin: 0px;">
+					<div id="my-book-title-box" class="row collapsible-header text-box"
+						style="margin: 0px; border: 0px;">
 						<div class="white-text col s9 valign-wrapper">
 							<i class="material-icons">expand_more</i>
 							<p style="margin: 0px;">{{reader.book_title}} - {{reader.author_name}}</p>
 						</div>
 						<div class="col s3 right-align" style="margin: 0px;">
-						        <div class="row">
-			<div class="switch">	
-<label>
+							<div class="right-align">
+								<label>
                     {% if reader.read_book %}
-                    <input id="read_book" name="read_book" type="checkbox" checked>
+                    <i class="material-icons prefix center tooltipped white-text" data-position="bottom" data-tooltip="Have read">check</i>
                     {% else %}
-                    <input id="read_book" name="read_book" type="checkbox">
+                    <i class="material-icons prefix center tooltipped white-text" data-position="bottom" data-tooltip="Want to read">hourglass_empty</i>
                     {% endif %}
-                    <span class="lever"></span>
-                    Read?
                 </label>
 
-<div class="switch right-align">
-							<a href="{{url_for('read_book', reader_id=reader._id)}}"
-						class="waves-effect waves-light btn btn_med teal darken-4 col s12">Read</a>
-						</div>
-                        <div class="switch right-align">
-							<a href="{{url_for('to_read_book', reader_id=reader._id)}}"
-						class="waves-effect waves-light btn btn_med teal darken-4 col s12">To read</a>
-						</div>
-        
-				
-			</div>
-		</div>
-
-
-
-
+							</div>
 						</div>
 					</div>
-					<div id="mylibrary-book-detail" class="row collapsible-body text-box white-text" style="margin: 0px;">
-						<div class="col s6">
-							<span>
-                            <strong>Genre:</strong> {{reader.genre_name}}
-			            </span>
-							<br>
-							<span>
-                            <strong>Publisher:</strong> {{reader.publisher_name}}
-                        </span>
-							<br>
-							<span>
-                            <strong>Release date:</strong> {{reader.release_date}}
-                        </span>
-							<br>
-							<span>
-                            <strong>Book length:</strong> {{reader.book_length}}
-                        </span>
-							<br>
-							<span>
-                            <strong>ISBN 13: </strong>{{reader.isbn_13}}
-                        </span>
+					<div id="my-book-detail-box" class="row collapsible-body text-box white-text"
+						style="margin: 0px; border: 0px;">
+						<div class="row" style="margin: 0px;">
+							<div id="my-book-pic" class="col s12 l6 center-align">
+								<a id="book_image" target="_blank"
+									href="{{reader.book_url}}"><img src="{{reader.book_image}}"></a>
+							</div>
+							<div id="book-detail" class="col s12 l6 center-align" style="margin: 15px 0px 15px;">
+								<span>
+                                <strong>Genre:</strong> {{reader.genre_name}}
+			                    </span>
+								<br>
+								<span>
+                                <strong>Publisher:</strong> {{reader.publisher_name}}
+                                </span>
+								<br>
+								<span>
+                                <strong>Release date:</strong> {{reader.release_date}}
+                                </span>
+								<br>
+								<span>
+                                <strong>Book length:</strong> {{reader.book_length}}
+                                </span>
+								<br>
+								<span>
+                                <strong>ISBN 13: </strong>{{reader.isbn_13}}
+                                </span>
+								<br>
+								<div class="row">
+                                
+                                <div class="col s5 right-align">
+									<a href="{{url_for('read_book', reader_id=reader._id)}}"
+										class="waves-effect waves-light btn btn_med teal darken-4 centre-align" style="margin-top:15px;"><i class="material-icons tooltipped" data-position="bottom" data-tooltip="Have read">check</i></a>
+                                </div>
+                                        <div class="col s2 center-align">
+									<a href="{{url_for('to_read_book', reader_id=reader._id)}}"
+										class="waves-effect waves-light btn btn_med teal darken-4 cnter-align" style="margin-top:15px;"><i class="material-icons tooltipped" data-position="bottom" data-tooltip="Want to read">hourglass_empty</i></a>
+								</div>
+                                <div class="col s5 left-align">
+									<a href="{{url_for('delete_book', reader_id=reader._id)}}"
+										class="waves-effect waves-light btn btn_med teal darken-4 center-align"
+										style="margin-top:15px;"><i class="material-icons tooltipped" data-position="bottom" data-tooltip="Remove book from 'My Library'">delete</i></a>
+                                </div>
+</div>
+							</div>
 						</div>
-						<div class="col s6 l3 right-align"></div>
-						<div class="col s12 l3 right-align" style="margin-top: 5px;">
-                        <div class="switch right-align">
-							<a href="{{url_for('delete_book', reader_id=reader._id)}}"
-						class="waves-effect waves-light btn btn_med teal darken-4 col s12"><i class="material-icons tooltipped" data-position="bottom" data-tooltip="Delete Book from Library">delete</i></a>
-						</div>
-                        </div>
 					</div>
 				</li>
 				{% endfor %}
