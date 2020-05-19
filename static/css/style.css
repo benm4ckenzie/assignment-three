@@ -1,8 +1,9 @@
+/*------------------------------------------------------------------SITE WIDE*/
+
+
 html {
     font-family: 'Libre Baskerville', serif;
 }
-/*------------------------------------------------------------------------------BACKGROUND*/
-
 
 .background-image {
     height: auto;
@@ -15,6 +16,41 @@ html {
     align-items: center;
     justify-content: center;
     position: relative;
+}
+
+main {
+    flex: 1 0 auto;
+  }
+
+  .heading-box {
+    background-color: rgba(128, 128, 128, 0.8);
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.text-box {
+    background-color: rgba(128, 128, 128, 0.8);
+    border-radius: 10px;
+}
+
+h4 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+.container {
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+textarea {
+    height: 8rem !important;
 }
 
 .btn_small {
@@ -38,74 +74,6 @@ body {
     min-height: 100vh;
     flex-direction: column;
   }
-
-main {
-    flex: 1 0 auto;
-  }
-
-.heading-box {
-    background-color: rgba(128, 128, 128, 0.8);
-    border-radius: 10px;
-    padding: 10px;
-    margin-left: 100px;
-    margin-right: 100px;
-}
-
-.text-box {
-    background-color: rgba(128, 128, 128, 0.8);
-    border-radius: 10px;
-}
-
-h4 {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 75px;
-    margin-right: 75px;
-}
-
-/*------------------------------------------------------------------------------ABOUT*/
-
-.about-text {
-    font-size: 20px;
-}
-
-.container {
-    height: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    position: relative;
-}
-
-#book-detail-box {
-    border: 0;
-    position: relative;
-}
-
-#my-book-detail-box {
-    border: 0;
-    position: relative;
-}
-
-#book-title-box {
-    border: 0;
-}
-
-#my-book-title-box {
-    border: 0;
-}
-
-
-textarea {
-    height: 8rem !important;
-}
-#book_picbook_image {
-    width: 95%;
-}
-
-#book_picbook_image img {
-    width: 100%;
-}
-
 
 .datepicker-date-display {
     background-color: #004d40;
@@ -151,9 +119,48 @@ td.is-selected.is-today {
 }
 
 
+/*------------------------------------------------------------------HOME*/
 
 
-	/*<div id="book-child" class="col s12" style="margin: 0px; padding: 0px;">
-											<a href="{{ url_for('edit_book', book_id=book._id)}}"
-												class="waves-effect waves-light btn btn_med teal darken-4 center-align"><i class="material-icons tooltipped" data-position="bottom" data-tooltip="Update Book">publish</i></a>
-										</div>
+/*------------------------------------------------------------------LIBRARY*/
+
+
+/*------------------------------------------------------------------MY LIBRARY*/
+
+
+/*------------------------------------------------------------------ADD BOOK*/
+
+
+/*------------------------------------------------------------------EDIT BOOK*/
+
+
+/*------------------------------------------------------------------ABOUT*/
+
+
+.about-text {
+    font-size: 20px;
+}
+
+
+/*------------------------------------------------------------------CONTACT*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

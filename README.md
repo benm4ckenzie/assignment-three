@@ -1,9 +1,24 @@
-Your Project's Name
-One or two paragraphs providing an overview of your project.
+The Book Club
 
-Essentially, this part is your sales pitch.
+The Book Club is a way for users to track their reading. Users can gain access to a centralised library whereby they can browse for books from a central database. If they find a book in the central library they have read, or want to read, they can add this book to their individual library. In their individual library they can mark these books as 'Read' or 'Want to read'. Users will also have the ability to add books to the central library should they not be able to find a particular book they are looking for. And, should they find a book with details missing, or incorrect details, users have the ability to update that book's record. Finally, users have the ability to delete books from their individual library if they not longer want it to remain part of their individual record.
+
+The Book Club website provides users with the opportunity to gain greater insights into their reading habits and bookmark various titles for future reading, ensuring they are reminded of what they want to read. With further development, via a registration process and log-in system, users will be able to search for specific authors, within particular genres, rate books, leave comments and search for books that are rated highly by the central community. Ultimately, the website will play the role of a community for book lovers to share their experiences and recommendations.
+
 
 UX
+
+I wanted to create a simple, uncluttered, and classic environment for the user. I wanted the website to appeal to the masses, but particularly to the heavy reader that can contribute to the development of the site as well as the content. I have attempted to remain consistent with the layout of the website so that there is minimal deviation from one library to the next, or from one input screen to the next. In addition, I have tried to minimise the website surplus text, use icons where possible with tooltips to provide detailed descriptions, and allow the website to focus on its aim. To create, read, update, and delete books.
+
+
+
+
+
+
+
+
+
+
+
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
 In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
@@ -21,7 +36,15 @@ For some/all of your features, you may choose to reference the specific project 
 
 In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
-Features Left to Implement
+*Features Left to Implement*
+
+**Features Left to Implement**
+
+***Features Left to Implement***
+
+There are a number of features I would still like to implement on the website. These include the following:
+-
+
 Another feature idea
 Technologies Used
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
