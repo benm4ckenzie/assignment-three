@@ -3,25 +3,28 @@
 <div class="container">
 	<h4 class="center-align heading-box white-text">Contact The Book Club</h4>
 	<div class="row" style="margin: 0px;">
-		<form action="" method="POST" class="text-box col s12">
+		<form class="text-box col s12">
 			<div class="row" style="margin: 0px;">
 				<div class="input-field col s12">
 					<i class="material-icons prefix white-text">person</i>
-					<input id="full_name" name="full_name" type="text" class="form-control white-text" placeholder="Name" required>
+					<input id="full_name" name="full_name" type="text" class="form-control white-text" placeholder="Name" required />
                 </div>
 				<div class="input-field col s12" style="margin-top: 0px;">
 					<i class="material-icons prefix white-text">alternate_email</i>
-					<input id="email_address" name="email_address" type="email" class="form-control white-text" placeholder="E-Mail" required>
+					<input id="email_address" name="email_address" type="email" class="form-control white-text" placeholder="E-Mail" required />
                 </div>
 				<div class="input-field col s12" style="margin-top: 0px;">
 				    <i class="material-icons prefix white-text">message</i>
 					<textarea rows="5" name="enquiry" id="enquiry" class="form-control white-text" placeholder="Enquiry" required></textarea>
 				</div>
 				<div class="center-align col s12" style="margin: 10px;">
-					<a href="{{ url_for('receipt') }}" class="waves-effect waves-light btn btn_med teal darken-4"><i class="material-icons tooltipped" data-position="bottom" data-tooltip="Send message">send</i></a>
+					<button href="{{ url_for('receipt') }}" class="waves-effect waves-light btn btn_med teal darken-4"><i class="material-icons tooltipped" data-position="bottom" data-tooltip="Send message">send</i></button>
                 </div>
 			</div>					
 		</form>
 	</div>
 </div>
 {% endblock %}
+
+
+
