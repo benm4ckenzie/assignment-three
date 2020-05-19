@@ -36,14 +36,13 @@ For some/all of your features, you may choose to reference the specific project 
 
 In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
-*Features Left to Implement*
 
 **Features Left to Implement**
 
-***Features Left to Implement***
-
 There are a number of features I would still like to implement on the website. These include the following:
--
+1. The addition of a registration and login process so there can be multiple users all developing their own libraries from the central collection.
+2. Search features in the central library allowing users to find books written by certain authors, search through titles of books from a particular genre, or serach for titles with a high user rating.
+3. 
 
 Another feature idea
 Technologies Used
