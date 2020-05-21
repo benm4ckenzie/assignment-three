@@ -3,7 +3,7 @@
 <div class="container">
 	<h4 class="center-align heading-box white-text">Contact The Book Club</h4>
 	<div class="row" style="margin: 0px;">
-		<form class="text-box col s12">
+		<form action="{{ url_for('receipt') }}" class="text-box col s12">
 			<div class="row" style="margin: 0px;">
 				<div class="input-field col s12">
 					<i class="material-icons prefix white-text">person</i>
@@ -18,7 +18,7 @@
 					<textarea rows="5" name="enquiry" id="enquiry" class="form-control white-text" placeholder="Enquiry" required></textarea>
 				</div>
 				<div class="center-align col s12" style="margin: 10px;">
-					<button href="{{ url_for('receipt') }}" class="waves-effect waves-light btn btn_med teal darken-4"><i class="material-icons tooltipped" data-position="bottom" data-tooltip="Send message">send</i></button>
+					<button class="waves-effect waves-light btn btn_med teal darken-4"><i class="material-icons tooltipped" data-position="bottom" data-tooltip="Send message">send</i></button>
                 </div>
 			</div>					
 		</form>

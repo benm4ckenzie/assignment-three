@@ -33,7 +33,7 @@
 								<a id="book_image" target="_blank"
 									href="{{reader.book_url}}"><img src="{{reader.book_image}}"></a>
 							</div>
-							<div class="col s12 l6 center-align" style="margin: 15px 0px 15px;">
+							<div class="col s12 l6 center-align book-details">
 								<span>
                                 <strong>Genre:</strong> {{reader.genre_name}}
 			                    </span>
@@ -56,15 +56,15 @@
 								<br>
 								<div class="row">
                                 
-                                <div class="col s5 right-align">
+                                <div class="col s5 l4 right-align">
 									<a href="{{url_for('read_book', reader_id=reader._id)}}"
 										class="waves-effect waves-light btn btn_med teal darken-4 centre-align" style="margin-top:15px;"><i class="material-icons tooltipped" data-position="bottom" data-tooltip="Have read">check</i></a>
                                 </div>
-                                        <div class="col s2 center-align">
+                                        <div class="col s2 l4 center-align">
 									<a href="{{url_for('to_read_book', reader_id=reader._id)}}"
 										class="waves-effect waves-light btn btn_med teal darken-4 cnter-align" style="margin-top:15px;"><i class="material-icons tooltipped" data-position="bottom" data-tooltip="Want to read">hourglass_empty</i></a>
 								</div>
-                                <div class="col s5 left-align">
+                                <div class="col s5 l4 left-align">
 									<a href="{{url_for('delete_book', reader_id=reader._id)}}"
 										class="waves-effect waves-light btn btn_med teal darken-4 center-align"
 										style="margin-top:15px;"><i class="material-icons tooltipped" data-position="bottom" data-tooltip="Remove book from 'My library'">delete</i></a>
