@@ -32,7 +32,6 @@ In terms of the user experience and the CRUD functionality, the following applie
 - **Navbar & footer** - All aspects of both have active links associated with them. As I have chosen to use icons for the majority of options, tooltips have been used to advise the user what each icon is for should they hover over that icon for an extended period of time. Each social media icon links to the social media accounts of the store linked to the sale of the books from the library. At smaller screen sizes the footer is removed and added to a sidenav to maximise screen usage.
 
 ###Features Left To Implement
-
 There are a number of features I would still like to implement on the website. These include the following:
 1. The addition of a registration and login process so there can be multiple users all developing their own libraries from the central collection.
 2. Search features in the central library allowing users to find books written by certain authors, search through titles of books from a particular genre, or serach for titles with a high user rating.
@@ -45,38 +44,90 @@ There are a number of features I would still like to implement on the website. T
 
 ##Technologies Used
 
+Throughout the development of the webpage, there was continuous testing and evaluation to ascertain whether the website functioned as planned.
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+The website was developed, as previously indicated, with minimalism in mind whilst drawing on the classical library feel to entice users and provide an ambiance that promoted ease and control.
 
-JQuery
-The project uses JQuery to simplify DOM manipulation.
-Testing
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+The 'inspect' tool in Google Chrome was the primary testing apparatus for the website when investigating the functionality and usability of the site at various screen resolutions. Whilst developing all sections of the website I continually reverted back to this tool to ensure the product matched my expectations which then informed me as to whether further modifications were required.
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+In addition to 'inspect' in Google Chrome, I frequented [W3C's HTML validation](https://validator.w3.org/) service as well as [W3C's CSS validation](https://jigsaw.w3.org/css-validator/) service to ensure my code fulfilled the necessary criteria and remove any errors.
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+Furthermore, in addition to HTML5 and CSS3, I made use of various other programming languages. These included the following:
+- **[Python](https://python.org/)** - This language was used to enable me to manipulate and analyse the data presented on the site.
+- **[MongoDB](https://mongoDB.com/cloud/atlas/)** - This database management site was used to store the data collected and manipulated on my website.
+- **[JavaScript](https://javascript.com/)** - This language was used to help create interactive elements within the site.
+- **[Materialize](https://materializecss.com/)** - The design and templates used were predominantly from this site.
+- **[Google fonts](https://fonts.google.com/)** - The typeface used on the website was taken from this site.
+- **[Jquery](https://jquery.com/)** - This language was used to ease the process of site and data manipulation.
+- **[Flask](https://fullstackpython.com/flask.html/)** - This language was used to make specific links from one page to another and form validation within the site.
+- **[Bson](https://bsonspec.org/)** - This allowed for data transfer between MongoDb and the deployed site.
+- **[PyMongo](https://pypi.org/project/pymongo/)** - This allows for the python code to interact with the Mongo database.
 
-Contact form:
-Go to the "Contact Us" page
-Try to submit the empty form and verify that an error message about the required fields appears
-Try to submit the form with an invalid email address and verify that a relevant error message appears
-Try to submit the form with all inputs valid and verify that a success message appears.
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+###Testing
+1. **NavBar & footer** 
+- All available links were hovered over to ensure a description of the icon was provided.
+- Each link was clicked to ensure they took the user to the specified page on the site.
+- Repeated all of the above at various screen sizes.
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+2. **Homepage**
+- Ensured there was enough contrast between the text and the background images.
+- Made sure the background images rotated at an appropriate speed to allow the user to read the content fully.
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+3. **Library**
+- Clicked on the 'Add to My library' button to ensure the title was added to the users library as well as take the user to their library to confirm.
+- Accessed to books information by clicking on the title and made sure they were aesthetically pleasing at all screen sizes.
+- Clicked on each book cover to confirm it took the user through to that book's page at [Waterstones](https://www.waterstones.com) so the user could purchase it. And, that this page was loaded on a seperate tab.
+- Clicked the 'Update book' button to ensure the updata book page loaded and the relevant information was retrieved from MongoDB for editting.
 
-##Deployment
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+4. **Update book**
+- Altered the details of each component of the book and submitted making sure that after submission the user is taken back to the library and all the updated information is contained within that book's container.
+- Typed in each of the key data entry points to ensure the autocomplete function still suggested inputs and was styled correctly.
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
+5. **Add book**
+- Tried to submit a book with no input to make sure it wouldn't allow it.
+- Tried to submit a book with only the author's name included to make sure it wouldn't allow it.
+- Tried to submit a book with only the book's title included to make sure it wouldn't allow it.
+- Make sure the correct warnings were visible if these parameters were not met.
+- Typed in each of the data requirements to make sure the autocomplete options were made avaikable to the user as well as the date picker with the correct number of years available to the user to pick from.
+- Typed in new data in each of the options, submitted the book, and checked to see if those new data points dbecame available to the user in the autocomplete next time they tried to add a book.
+- Submitted a successful entry and made sure the button returned the user to the main library to view their entry.
 
-Different values for environment variables (Heroku Config Vars)?
-Different configuration files?
-Separate git branch?
-In addition, if it is not obvious, you should also describe how to run your code locally.
+6. **My library**
+- After adding a book to 'My library' from the main library, checked to make sure the default icon was the hourglass (Want to read) encouraging the user to either read the book, or actively change the icon.
+- Again, checked the functionality of the page and that it mimiced the central library usability. i.e. That the book details were revealed upon clicking on the title and that having clicked on the book cover the user is taken to a page whereby they can purchase it.
+- Check that the 'Read' button changes the icon from an hourglass to a tick and also that the 'Want to read' button reverts the icon back to default.
+- Clicked on the 'Delete' button to delete the book from the user library and make sure that the user remains in their own library. In addition, also checked that the title deleted from the user library remained in the central library, unaffected.
+- Checked the usability and design of these elements at all screen sizes.
+
+7. **About**
+- Ensured the page rendered as neccessary and the message link in the text took the user to the contact page.
+
+8. **Contact**
+- Tried to submit a message with no input to make sure it wouldn't allow it.
+- Tried to submit a message with only the users name to make sure it wouldn't allow it.
+- Tried to submit a book with a wrong email address to make sure it wouldn't allow it.
+- Tried submitting the message with correct user name and email address, but no enquiry, to make sure it would not allow it.
+- Make sure the correct warnings were visible if each of these parameters were not met by the user.
+- Upon completing the enquiry form correctly, ensure that the 'Submit' button took the user to the receipt page and acknowledged their message.
+
+Whilst working on the project I ran into a number of bugs that I feel have been resolved to my satisfaction. These bugs included:
+
+1. Ensuring the details of the book rendered vertically centred in the dropdown section whilst closing the gap to the book image at smaller screen sizes.
+2. Making the homepage slider go full screen was initially problematic.
+3. Making sure the contact page presented the warnings to the user following incorrect or missing details instead of just sending the user through to the receipt page.
+4. Adding a book to a user library from the central library under a new ID was troublesome.
+
+All of the bugs addressed above have been resolved to my satisfaction.
+
+
+## Deployment
+
+The site was deployed via Heroku using GitHub, and utilises a single branch. Throughout the development process, at each key phase, I committed the updated files to GitHub so as to back up my work and also allow me to refer back to previous versions of my work. As I had linked my GitHub account to my Heroku account, these pushes were automatically pushed to my Heroku account and updated there, too.
+
+The deployed site, when accessed directly from an iPad or iPhone, largely displays exactly as it did whilst using the inspect feature of Chrome. However, there are a number of buttons at smaller screen sizes where the icon has not reduced in size to match the size of the button. In addition, the warning messages where fields have been incorrectly filled or left blank do not render appropriately on smaller screens sizes. Finally, when clicking on a book in either library to expand the detail associated with that title, the background image seems to expand whereas I hope it would have remained fixed. These are problematic and need addressing in future development of the website.
+
+Deployed site URL: https://https://assignment-three-ben.herokuapp.com/home
+GitHub repository URL: https://github.com/benm4ckenzie/assignment-three
 
 
 ##Credits
