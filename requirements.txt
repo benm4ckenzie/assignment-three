@@ -1,7 +1,7 @@
 click==7.1.1
 dnspython==1.16.0
 flake8==3.8.1
-Flask==1.1.2
+Flask==2.3.2
 Flask-PyMongo==2.3.0
 itsdangerous==1.1.0
 pycodestyle==2.6.0
